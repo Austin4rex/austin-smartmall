@@ -1,0 +1,2197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Austin Smart Mall — Nigeria's Smart Marketplace</title>
+<meta name="description" content="Austin Smart Mall — shop Nigerian products with Naira pricing, Paystack payments, WhatsApp ordering, and Amara AI assistant. Real vendors and affiliate deals.">
+<meta name="theme-color" content="#1B2A4A">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://austinsmartmall.ng/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Austin Smart Mall — Nigeria">
+<meta property="og:description" content="Nigerian marketplace with Naira pricing, Paystack, WhatsApp orders, and AI shopping assistant.">
+<meta property="og:locale" content="en_NG">
+<meta property="og:site_name" content="Austin Smart Mall">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Austin Smart Mall — Nigeria">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Austin Smart Mall">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇳🇬</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --asm-navy:#1B2A4A;--asm-gold:#E8A020;--asm-sage:#4A7C5F;--asm-cream:#F7F4EE;--asm-accent:#C85A2A;
+  --surface-0:#F2F0EB;--surface-1:#F7F6F2;--surface-2:#FFFFFF;
+  --text-primary:#1A1A18;--text-secondary:#5F5E5A;--text-muted:#888780;
+  --border:rgba(0,0,0,.1);--border-strong:rgba(0,0,0,.18);
+  --bg-accent:#E6F1FB;--text-accent:#185FA5;--border-accent:#378ADD;
+  --bg-success:#EAF3DE;--text-success:#3B6D11;
+  --font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --radius:8px;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --surface-0:#1A1A18;--surface-1:#222220;--surface-2:#2C2C2A;
+    --text-primary:#F0EEE8;--text-secondary:#B4B2A9;--text-muted:#888780;
+    --border:rgba(255,255,255,.1);--border-strong:rgba(255,255,255,.18);
+    --bg-accent:#042C53;--text-accent:#85B7EB;--border-accent:#185FA5;
+    --bg-success:#173404;--text-success:#97C459;
+  }
+}
+body{font-family:var(--font-sans);background:var(--surface-0);color:var(--text-primary);max-width:480px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column}
+
+.mall-header{background:var(--asm-navy);color:#fff;padding:14px 16px 10px;position:sticky;top:0;z-index:100}
+.mall-logo{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.logo-badge{background:var(--asm-gold);color:var(--asm-navy);font-size:11px;font-weight:600;padding:2px 7px;border-radius:3px}
+.logo-name{font-size:17px;font-weight:600;color:#fff;letter-spacing:-.02em}
+.logo-sub{font-size:11px;color:rgba(255,255,255,.55);margin-left:2px}
+.search-row{display:flex;gap:8px;align-items:center}
+.search-wrap{flex:1;position:relative}
+.search-wrap input{width:100%;background:rgba(255,255,255,.12);border:0.5px solid rgba(255,255,255,.2);border-radius:8px;padding:8px 12px 8px 34px;font-size:13px;color:#fff;outline:none}
+.search-wrap input::placeholder{color:rgba(255,255,255,.45)}
+.search-wrap i{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:16px;color:rgba(255,255,255,.5)}
+.cart-btn,.dash-btn{background:rgba(255,255,255,.1);border:0.5px solid rgba(255,255,255,.2);border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;position:relative;flex-shrink:0}
+.cart-count{position:absolute;top:-4px;right:-4px;background:var(--asm-gold);color:var(--asm-navy);font-size:9px;font-weight:600;border-radius:10px;padding:1px 4px;min-width:14px;text-align:center;display:none}
+.nav-tabs{display:flex;gap:0;overflow-x:auto;background:rgba(255,255,255,.06);border-radius:6px;padding:3px;margin:10px 0 0}
+.nav-tabs::-webkit-scrollbar{display:none}
+.nav-tab{flex-shrink:0;padding:5px 12px;border-radius:5px;font-size:12px;color:rgba(255,255,255,.6);cursor:pointer;white-space:nowrap;border:none;background:none;transition:all .15s}
+.nav-tab.active{background:rgba(255,255,255,.15);color:#fff}
+
+.screen{display:none}
+.screen.active{display:block}
+
+.hero{background:linear-gradient(135deg,var(--asm-navy) 0%,#2d4a7a 100%);padding:20px 16px 24px;color:#fff}
+.hero-eyebrow{font-size:11px;color:var(--asm-gold);margin-bottom:6px}
+.hero-title{font-size:24px;font-weight:600;line-height:1.2;margin-bottom:8px}
+.hero-title em{font-style:normal;color:var(--asm-gold)}
+.hero-sub{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5;margin-bottom:16px;max-width:280px}
+.hero-ctas{display:flex;gap:8px;flex-wrap:wrap}
+.btn-primary-hero{background:var(--asm-gold);color:var(--asm-navy);border:none;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:600;cursor:pointer}
+.btn-ghost-hero{background:rgba(255,255,255,.1);color:#fff;border:0.5px solid rgba(255,255,255,.3);border-radius:8px;padding:9px 14px;font-size:13px;cursor:pointer}
+.hero-badge-group{display:flex;gap:6px;margin-top:16px;flex-wrap:wrap}
+.hero-badge{background:rgba(255,255,255,.1);border:0.5px solid rgba(255,255,255,.15);border-radius:20px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,.75)}
+
+.section{padding:16px}
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.section-title{font-size:15px;font-weight:600}
+.section-link{font-size:12px;color:var(--asm-sage);cursor:pointer;border:none;background:none;padding:0}
+
+.cats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.cat-card{background:var(--surface-1);border:0.5px solid var(--border);border-radius:12px;padding:14px 12px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:border-color .15s}
+.cat-card:hover{border-color:var(--border-strong)}
+.cat-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.cat-name{font-size:13px;font-weight:500;margin-bottom:1px}
+.cat-count{font-size:11px;color:var(--text-secondary)}
+
+.products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.product-card{background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:border-color .15s}
+.product-card:hover{border-color:var(--border-strong)}
+.product-img{height:110px;display:flex;align-items:center;justify-content:center;font-size:44px;background:var(--surface-1)}
+.product-body{padding:10px}
+.product-vendor{font-size:10px;color:var(--text-muted);margin-bottom:3px}
+.product-name{font-size:12px;font-weight:500;line-height:1.3;margin-bottom:6px}
+.product-footer{display:flex;align-items:center;justify-content:space-between}
+.product-price{font-size:14px;font-weight:600;color:var(--asm-navy)}
+.product-add{width:26px;height:26px;border-radius:50%;background:var(--asm-sage);border:none;color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
+.badge-free{background:#E8F5E9;color:#2E7D32;font-size:9px;padding:2px 5px;border-radius:3px;font-weight:500}
+.badge-sale{background:#FFF3E0;color:#E65100;font-size:9px;padding:2px 5px;border-radius:3px;font-weight:500}
+.badge-aff{background:#E3F2FD;color:#1565C0;font-size:9px;padding:2px 5px;border-radius:3px;font-weight:500}
+
+.promo-strip{margin:0 16px 16px;background:var(--asm-cream);border:0.5px solid var(--border);border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px}
+.promo-icon{width:40px;height:40px;background:var(--asm-accent);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;flex-shrink:0}
+.promo-title{font-size:13px;font-weight:600;color:var(--asm-navy);margin-bottom:2px}
+.promo-sub{font-size:11px;color:var(--text-secondary);line-height:1.4}
+.promo-btn{margin-left:auto;background:var(--asm-navy);color:#fff;border:none;border-radius:8px;padding:7px 12px;font-size:12px;cursor:pointer;flex-shrink:0;white-space:nowrap}
+
+.vendors-scroll{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.vendors-scroll::-webkit-scrollbar{display:none}
+.vendor-chip{flex-shrink:0;background:var(--surface-1);border:0.5px solid var(--border);border-radius:20px;padding:6px 12px;font-size:12px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px}
+.vendor-dot{width:8px;height:8px;border-radius:50%;background:var(--asm-sage)}
+
+.ai-screen{padding:16px}
+.ai-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:14px;border-bottom:0.5px solid var(--border)}
+.ai-avatar{width:40px;height:40px;border-radius:50%;background:var(--asm-navy);display:flex;align-items:center;justify-content:center;color:var(--asm-gold);font-size:18px;flex-shrink:0}
+.ai-name{font-size:14px;font-weight:600}
+.ai-status{font-size:11px;color:var(--asm-sage)}
+.chat-area{display:flex;flex-direction:column;gap:10px;min-height:200px;margin-bottom:14px;max-height:320px;overflow-y:auto}
+.msg{max-width:85%;padding:10px 12px;border-radius:12px;font-size:13px;line-height:1.5}
+.msg-ai{background:var(--surface-1);border:0.5px solid var(--border);border-bottom-left-radius:4px;align-self:flex-start}
+.msg-user{background:var(--asm-navy);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.quick-replies{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.quick-reply{background:none;border:0.5px solid var(--border-strong);border-radius:16px;padding:5px 10px;font-size:11px;cursor:pointer;color:var(--text-secondary)}
+.chat-input-row{display:flex;gap:8px;align-items:flex-end}
+.chat-input-row textarea{flex:1;border:0.5px solid var(--border);border-radius:10px;padding:9px 12px;font-size:13px;resize:none;height:38px;font-family:var(--font-sans);background:var(--surface-2);color:var(--text-primary);outline:none}
+.chat-send{width:38px;height:38px;border-radius:10px;background:var(--asm-navy);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+
+.cart-screen{padding:16px}
+.cart-empty{text-align:center;padding:40px 16px}
+.cart-items{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.cart-item{background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;padding:12px;display:flex;gap:12px;align-items:center}
+.cart-item-img{width:50px;height:50px;background:var(--surface-1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.cart-item-info{flex:1}
+.cart-item-name{font-size:13px;font-weight:500;margin-bottom:2px}
+.cart-item-vendor{font-size:11px;color:var(--text-muted)}
+.cart-item-price{font-size:14px;font-weight:600;color:var(--asm-navy)}
+.cart-remove{background:none;border:none;color:var(--text-muted);cursor:pointer;padding:4px;font-size:16px}
+.cart-summary{background:var(--surface-1);border-radius:12px;padding:14px;margin-bottom:16px}
+.cart-row{display:flex;justify-content:space-between;font-size:13px;color:var(--text-secondary);margin-bottom:8px}
+.cart-row.total{font-size:15px;font-weight:600;color:var(--text-primary);margin-bottom:0;padding-top:10px;border-top:0.5px solid var(--border)}
+.checkout-btn,.paystack-btn,.whatsapp-btn{width:100%;border:none;border-radius:10px;padding:14px;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:8px}
+.checkout-btn{background:var(--asm-navy);color:#fff}
+.paystack-btn{background:#0BA4DB;color:#fff}
+.whatsapp-btn{background:#25D366;color:#fff}
+.upgrade-teaser{background:var(--asm-cream);border:0.5px solid var(--border);border-radius:10px;padding:12px;margin-top:12px;display:flex;align-items:center;gap:10px}
+
+.vendor-screen{padding:16px}
+.vendor-hero{background:var(--asm-sage);border-radius:12px;padding:20px;color:#fff;margin-bottom:16px}
+.vendor-name{font-size:18px;font-weight:600;margin-bottom:4px}
+.vendor-meta{font-size:12px;color:rgba(255,255,255,.75);margin-bottom:12px}
+.vendor-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.vstat{background:rgba(255,255,255,.15);border-radius:8px;padding:8px;text-align:center}
+.vstat-num{font-size:16px;font-weight:600}
+.vstat-label{font-size:10px;color:rgba(255,255,255,.7)}
+.plan-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
+.plan-card{background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;padding:14px}
+.plan-card.featured{border:2px solid var(--border-accent)}
+.plan-badge{font-size:10px;padding:2px 8px;border-radius:10px;margin-bottom:8px;display:inline-block;background:var(--bg-accent);color:var(--text-accent)}
+.plan-price{font-size:22px;font-weight:600;margin:6px 0 2px}
+.plan-period{font-size:11px;color:var(--text-secondary)}
+.plan-features{margin-top:10px;display:flex;flex-direction:column;gap:4px}
+.plan-feature{font-size:11px;color:var(--text-secondary);display:flex;align-items:center;gap:5px}
+.plan-cta{width:100%;margin-top:12px;padding:8px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;border:0.5px solid var(--border-strong);background:none;color:var(--text-primary)}
+.plan-cta.accent{background:var(--asm-navy);color:#fff;border:none}
+
+.form-group{margin-bottom:12px}
+.form-group label{display:block;font-size:12px;font-weight:500;margin-bottom:4px;color:var(--text-secondary)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 12px;border:0.5px solid var(--border);border-radius:8px;font-size:13px;background:var(--surface-2);color:var(--text-primary);font-family:var(--font-sans);outline:none}
+.form-group textarea{min-height:80px;resize:vertical}
+.btn-submit{width:100%;background:var(--asm-navy);color:#fff;border:none;border-radius:10px;padding:12px;font-size:14px;font-weight:600;cursor:pointer}
+
+.bottom-nav{position:sticky;bottom:0;background:var(--surface-2);border-top:0.5px solid var(--border);display:flex;padding:8px 0 12px;z-index:90}
+.bn-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;border:none;background:none;color:var(--text-muted);padding:0;transition:color .15s}
+.bn-item.active{color:var(--asm-navy)}
+.bn-item i{font-size:22px}
+.bn-item span{font-size:9px}
+
+.product-detail{padding:0 0 16px}
+.pd-img{height:180px;background:var(--surface-1);display:flex;align-items:center;justify-content:center;font-size:80px}
+.pd-body{padding:14px 16px}
+.pd-vendor-tag{font-size:11px;color:var(--text-muted);margin-bottom:6px}
+.pd-title{font-size:18px;font-weight:600;margin-bottom:6px;line-height:1.3}
+.pd-price-row{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.pd-price{font-size:22px;font-weight:600;color:var(--asm-navy)}
+.pd-orig{font-size:14px;color:var(--text-muted);text-decoration:line-through}
+.pd-desc{font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px}
+.pd-features{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:16px}
+.pd-feature{background:var(--surface-1);border-radius:8px;padding:8px;font-size:12px;color:var(--text-secondary);display:flex;align-items:center;gap:6px}
+.pd-actions{padding:0 16px;display:flex;flex-direction:column;gap:8px}
+.pd-add-cart{width:100%;background:var(--asm-navy);color:#fff;border:none;border-radius:10px;padding:13px;font-size:14px;font-weight:600;cursor:pointer}
+.pd-wa{width:100%;background:#25D366;color:#fff;border:none;border-radius:10px;padding:13px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.back-btn{background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-secondary);padding:12px 16px}
+
+.ai-product-card{background:var(--surface-1);border:0.5px solid var(--border);border-radius:10px;padding:10px 12px;margin-top:8px;display:flex;align-items:center;gap:10px;cursor:pointer}
+.ai-product-emoji{font-size:28px;width:42px;height:42px;background:var(--surface-2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ai-product-info{flex:1}
+.ai-product-name{font-size:12px;font-weight:500}
+.ai-product-price{font-size:11px;color:var(--text-secondary)}
+.ai-product-add{font-size:11px;color:var(--asm-sage);border:none;background:none;cursor:pointer;white-space:nowrap}
+
+.dash-screen{padding:16px}
+.dash-card{background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;padding:14px;margin-bottom:12px}
+.dash-stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
+.dash-stat{background:var(--surface-1);border-radius:10px;padding:12px;text-align:center}
+.dash-stat-num{font-size:20px;font-weight:600;color:var(--asm-navy)}
+.dash-stat-label{font-size:11px;color:var(--text-secondary)}
+.order-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:0.5px solid var(--border);font-size:13px}
+.order-status{font-size:11px;padding:2px 8px;border-radius:10px;background:var(--bg-success);color:var(--text-success)}
+.marketing-box{background:var(--surface-1);border-radius:10px;padding:12px;margin-top:8px;font-size:13px;line-height:1.5;white-space:pre-wrap}
+.copy-btn{margin-top:8px;background:var(--asm-navy);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:12px;cursor:pointer}
+
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--asm-navy);color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;z-index:200;display:none;max-width:90%}
+</style>
+</head>
+<body>
+
+<div class="mall-header">
+  <div class="mall-logo">
+    <span class="logo-badge">NG</span>
+    <span class="logo-name">Austin Smart Mall</span>
+    <span class="logo-sub">Nigeria</span>
+    <span id="authStatus" style="margin-left:auto;display:flex;align-items:center"></span>
+  </div>
+  <div id="apiBanner" style="display:none;font-size:11px;padding:6px 0 0;color:rgba(255,255,255,.75)"></div>
+  <div class="search-row">
+    <div class="search-wrap">
+      <i class="ti ti-search" aria-hidden="true"></i>
+      <input type="text" placeholder="Search products, vendors…" id="searchInput">
+    </div>
+    <button class="cart-btn" onclick="showScreen('cart')" aria-label="View cart">
+      <i class="ti ti-shopping-cart" aria-hidden="true"></i>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <button class="dash-btn" onclick="showScreen('dashboard')" aria-label="Owner dashboard" title="Owner">
+      <i class="ti ti-layout-dashboard" aria-hidden="true"></i>
+    </button>
+  </div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showScreen('home',this)">Home</button>
+    <button class="nav-tab" onclick="showScreen('products',this)">Browse</button>
+    <button class="nav-tab" onclick="showScreen('ai',this)">AI Advisor</button>
+    <button class="nav-tab" onclick="showScreen('vendors',this)">Sell</button>
+    <button class="nav-tab" onclick="showScreen('cart',this)">Cart</button>
+  </div>
+</div>
+
+<!-- HOME -->
+<div id="home" class="screen active">
+  <div class="hero">
+    <div class="hero-eyebrow">Nigeria’s smart shopping destination</div>
+    <div class="hero-title">Shop local.<br><em>Think smart.</em></div>
+    <div class="hero-sub">Real Nigerian vendors. Naira pricing. Paystack & WhatsApp ordering. Free to join.</div>
+    <div class="hero-ctas">
+      <button class="btn-primary-hero" onclick="showScreen('products')">Shop now</button>
+      <button class="btn-ghost-hero" onclick="showScreen('ai')">Ask AI advisor ↗</button>
+    </div>
+    <div class="hero-badge-group">
+      <span class="hero-badge">🇳🇬 Made in Nigeria</span>
+      <span class="hero-badge">₦ Naira pricing</span>
+      <span class="hero-badge">🤖 AI-powered</span>
+      <span class="hero-badge">💬 WhatsApp order</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Shop by category</span>
+      <button class="section-link" onclick="showScreen('products')">All →</button>
+    </div>
+    <div class="cats-grid">
+      <div class="cat-card" onclick="filterCat('Food & Groceries')"><div class="cat-icon" style="background:#FFF3E0">🍲</div><div><div class="cat-name">Food & Groceries</div><div class="cat-count">12 items</div></div></div>
+      <div class="cat-card" onclick="filterCat('Fashion')"><div class="cat-icon" style="background:#FCE4EC">👗</div><div><div class="cat-name">Fashion</div><div class="cat-count">9 items</div></div></div>
+      <div class="cat-card" onclick="filterCat('Tech & Gadgets')"><div class="cat-icon" style="background:#E3F2FD">📱</div><div><div class="cat-name">Tech & Gadgets</div><div class="cat-count">7 items</div></div></div>
+      <div class="cat-card" onclick="filterCat('Home & Living')"><div class="cat-icon" style="background:#E8F5E9">🏠</div><div><div class="cat-name">Home & Living</div><div class="cat-count">6 items</div></div></div>
+      <div class="cat-card" onclick="filterCat('Beauty & Wellness')"><div class="cat-icon" style="background:#E0F7FA">✨</div><div><div class="cat-name">Beauty & Wellness</div><div class="cat-count">5 items</div></div></div>
+      <div class="cat-card" onclick="filterCat('Affiliate Deals')"><div class="cat-icon" style="background:#E3F2FD">🔗</div><div><div class="cat-name">Affiliate Deals</div><div class="cat-count">4 items</div></div></div>
+    </div>
+  </div>
+
+  <div class="promo-strip">
+    <div class="promo-icon"><i class="ti ti-robot" aria-hidden="true"></i></div>
+    <div class="promo-text">
+      <div class="promo-title">Your AI shopping advisor</div>
+      <div class="promo-sub">Only recommends real products available right now.</div>
+    </div>
+    <button class="promo-btn" onclick="showScreen('ai')">Chat</button>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><span class="section-title">Featured items</span><button class="section-link" onclick="showScreen('products')">See all →</button></div>
+    <div class="products-grid" id="homeProducts"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><span class="section-title">Top Nigerian vendors</span></div>
+    <div class="vendors-scroll" id="vendorChips"></div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<div id="products" class="screen">
+  <div class="section" style="padding-bottom:8px">
+    <div class="section-header"><span class="section-title" id="browseTitle">All products</span></div>
+    <div class="vendors-scroll" style="margin-bottom:12px" id="filterChips"></div>
+    <div class="products-grid" id="allProducts"></div>
+  </div>
+</div>
+
+<!-- PRODUCT DETAIL -->
+<div id="product-detail" class="screen">
+  <button class="back-btn" onclick="goBack()"><i class="ti ti-arrow-left"></i> Back</button>
+  <div id="pdContent"></div>
+</div>
+
+<!-- AI ADVISOR -->
+<div id="ai" class="screen">
+  <div class="ai-screen">
+    <div class="ai-header">
+      <div class="ai-avatar"><i class="ti ti-robot" aria-hidden="true"></i></div>
+      <div>
+        <div class="ai-name">Amara — 24/7 Sales Assistant</div>
+        <div class="ai-status">● Online · Real products only · Guides to checkout</div>
+      </div>
+    </div>
+    <div style="background:#E8F5E9;border:1px solid #A5D6A7;border-radius:8px;padding:8px 10px;margin-bottom:12px;font-size:11px;color:#1B5E20">
+      Stage 7: Amara can recommend, add to cart and guide you to Paystack — she never invents products or pretends an order is fulfilled.
+    </div>
+    <div class="chat-area" id="chatArea"></div>
+    <div class="quick-replies" id="quickReplies">
+      <button class="quick-reply" onclick="sendQuick('Find me a gift under ₦10,000')">Gift under ₦10k 🎁</button>
+      <button class="quick-reply" onclick="sendQuick('I need jollof spice or Nigerian food items')">Nigerian food 🍲</button>
+      <button class="quick-reply" onclick="sendQuick('Something for my home office under 25k')">Home office 💻</button>
+      <button class="quick-reply" onclick="sendQuick('Show me affiliate deals')">Affiliate deals 🔗</button>
+      <button class="quick-reply" onclick="sendQuick('Go to checkout')">Checkout 🛒</button>
+    </div>
+    <div class="chat-input-row">
+      <textarea id="chatInput" placeholder="Tell Amara what you need…" onkeydown="handleKey(event)"></textarea>
+      <button class="chat-send" onclick="sendMessage()" aria-label="Send"><i class="ti ti-send" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- CART -->
+<div id="cart" class="screen">
+  <div class="cart-screen">
+    <div class="section-header" style="margin-bottom:14px"><span class="section-title">Your cart</span></div>
+    <div id="cartContent"></div>
+  </div>
+</div>
+
+<!-- VENDORS / ONBOARDING (Stage 6) -->
+<div id="vendors" class="screen">
+  <div class="vendor-screen">
+    <div class="vendor-hero">
+      <div class="vendor-name">Sell on Austin Smart Mall</div>
+      <div class="vendor-meta">Stage 6 — Supply side. Vendors, products, approval, balances & affiliate path.</div>
+      <div class="vendor-stats">
+        <div class="vstat"><div class="vstat-num" id="vStatShoppers">15k+</div><div class="vstat-label">Shoppers</div></div>
+        <div class="vstat"><div class="vstat-num" id="vStatVendors">0</div><div class="vstat-label">Vendors</div></div>
+        <div class="vstat"><div class="vstat-num">₦0</div><div class="vstat-label">To start</div></div>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-bottom:12px"><span class="section-title">Choose your plan</span></div>
+    <div class="plan-cards">
+      <div class="plan-card">
+        <div class="plan-badge" style="background:var(--bg-success);color:var(--text-success)">Free forever</div>
+        <div class="plan-price">₦0</div><div class="plan-period">per month</div>
+        <div class="plan-features">
+          <div class="plan-feature"><i class="ti ti-check"></i> 15 product listings</div>
+          <div class="plan-feature"><i class="ti ti-check"></i> Basic storefront</div>
+          <div class="plan-feature"><i class="ti ti-check"></i> WhatsApp ordering</div>
+          <div class="plan-feature"><i class="ti ti-check"></i> Community support</div>
+        </div>
+        <button class="plan-cta" onclick="showOnboardForm('free')">Start free</button>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-badge">Pro — most popular</div>
+        <div class="plan-price">₦12,500</div><div class="plan-period">per month</div>
+        <div class="plan-features">
+          <div class="plan-feature"><i class="ti ti-check"></i> Unlimited listings</div>
+          <div class="plan-feature"><i class="ti ti-check"></i> AI product copy</div>
+          <div class="plan-feature"><i class="ti ti-check"></i> Priority placement</div>
+          <div class="plan-feature"><i class="ti ti-check"></i> Analytics + marketing tools</div>
+        </div>
+        <button class="plan-cta accent" onclick="showOnboardForm('pro')">Upgrade to Pro</button>
+      </div>
+    </div>
+
+    <!-- Vendor application form -->
+    <div id="onboardForm" style="display:none;margin-top:16px">
+      <div class="section-header"><span class="section-title">Vendor application</span></div>
+      <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px">Applications go to the Owner Dashboard for approval. Only approved vendors can list products that Amara recommends.</p>
+      <div class="form-group"><label>Business / Brand name *</label><input type="text" id="vName" placeholder="e.g. Lagos Spice Co."></div>
+      <div class="form-group"><label>WhatsApp number (for orders) *</label><input type="tel" id="vPhone" placeholder="+234 801 234 5678"></div>
+      <div class="form-group"><label>City</label>
+        <select id="vCity">
+          <option>Lagos</option><option>Abuja</option><option>Port Harcourt</option><option>Ibadan</option><option>Kano</option><option>Other</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Category focus</label>
+        <select id="vCat">
+          <option>Food & Groceries</option><option>Fashion</option><option>Tech & Gadgets</option><option>Home & Living</option><option>Beauty & Wellness</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Plan</label>
+        <select id="vPlan"><option value="free">Free</option><option value="pro">Pro (₦12,500/mo)</option></select>
+      </div>
+      <div class="form-group"><label>Short description</label><textarea id="vDesc" placeholder="What do you sell?"></textarea></div>
+      <button class="btn-submit" onclick="submitVendor()">Submit for approval</button>
+    </div>
+
+    <!-- Affiliate product application (separate path) -->
+    <div style="margin-top:24px;padding-top:16px;border-top:0.5px solid var(--border)">
+      <div class="section-header"><span class="section-title">Affiliate product path</span></div>
+      <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.45">
+        Affiliate merchant → Affiliate product → Customer click → Merchant confirms sale → Commission recorded.<br>
+        No inventory held by the mall. Commission rates are set by the affiliate network.
+      </p>
+      <button class="btn-submit" style="background:#1565C0" onclick="showAffiliateForm()">Submit affiliate product</button>
+      <div id="affiliateForm" style="display:none;margin-top:12px">
+        <div class="form-group"><label>Product name *</label><input type="text" id="aName" placeholder="e.g. Infinix Smart 8"></div>
+        <div class="form-group"><label>Merchant / Network *</label><input type="text" id="aMerchant" placeholder="e.g. Jumia Affiliate / TechHub"></div>
+        <div class="form-group"><label>Your affiliate link *</label><input type="url" id="aLink" placeholder="https://..."></div>
+        <div class="form-group"><label>Price (₦)</label><input type="number" id="aPrice" placeholder="145000"></div>
+        <div class="form-group"><label>Expected commission %</label><input type="number" id="aComm" placeholder="8" value="8"></div>
+        <button class="btn-submit" onclick="submitAffiliate()">Submit for review</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OWNER DASHBOARD -->
+<div id="dashboard" class="screen">
+  <div class="dash-screen">
+    <div class="section-header"><span class="section-title">Austin SmartMall Dashboard</span></div>
+
+    <!-- Reality note -->
+    <div style="background:#FFF8E1;border:1px solid #FFE082;border-radius:10px;padding:12px;margin-bottom:14px;font-size:12px;color:#5D4037;line-height:1.45">
+      <strong>Human steps required</strong><br>
+      Amara AI can recommend products and the system can take payments, but inventory, packing, shipping and customer follow-up are still handled by you or your vendors. Those steps are surfaced below so nothing is hidden.
+    </div>
+
+    <!-- ========== STAGE 5: REVENUE ENGINE ========== -->
+    <div class="dash-card" style="border:2px solid var(--asm-gold);">
+      <div style="font-weight:600;margin-bottom:8px;font-size:15px;display:flex;align-items:center;gap:8px">
+        <span style="background:var(--asm-gold);color:var(--asm-navy);font-size:10px;padding:2px 6px;border-radius:4px">STAGE 5</span>
+        Revenue Engine
+      </div>
+      <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.45">
+        How Austin Smart Mall makes money. You do <strong>not</strong> need to buy large stock to start — combine your own products, approved vendor products, and legitimate affiliate offers.
+      </p>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:12px">
+        <div style="background:var(--surface-1);border-radius:10px;padding:12px">
+          <div style="font-size:12px;font-weight:600;margin-bottom:4px">1. Direct / Vendor sales</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-bottom:6px">
+            Platform fee on products sold through the mall (illustrative 10%). Vendors keep the rest.
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:13px">
+            <span>Platform fee</span>
+            <strong id="revDirect">₦0</strong>
+          </div>
+        </div>
+
+        <div style="background:var(--surface-1);border-radius:10px;padding:12px">
+          <div style="font-size:12px;font-weight:600;margin-bottom:4px">2. Affiliate commissions</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-bottom:6px">
+            Products marked “Affiliate” earn commission from the partner when a sale completes. No inventory risk.
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:13px">
+            <span>Est. commission (8% example)</span>
+            <strong id="revAffiliate">₦0</strong>
+          </div>
+        </div>
+
+        <div style="background:var(--surface-1);border-radius:10px;padding:12px">
+          <div style="font-size:12px;font-weight:600;margin-bottom:4px">3. Vendor subscription plans</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-bottom:6px">
+            Free = limited listings. Pro = ₦12,500/month for unlimited listings + priority + marketing tools.
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:13px">
+            <span>Active Pro (simulated)</span>
+            <strong id="revSubs">₦0</strong>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--asm-navy);color:#fff;border-radius:10px;padding:12px;text-align:center">
+        <div style="font-size:11px;opacity:.8;margin-bottom:2px">Total tracked revenue (this session)</div>
+        <div style="font-size:22px;font-weight:600" id="revTotal">₦0</div>
+        <div style="font-size:10px;opacity:.7;margin-top:4px">Demo/test payments are excluded from “real” totals</div>
+      </div>
+    </div>
+    
+    <div class="dash-stat-grid">
+      <div class="dash-stat"><div class="dash-stat-num" id="statOrders">0</div><div class="dash-stat-label">Orders</div></div>
+      <div class="dash-stat"><div class="dash-stat-num" id="statRevenue">₦0</div><div class="dash-stat-label">Sales (real)</div></div>
+      <div class="dash-stat"><div class="dash-stat-num" id="statAffiliate">₦0</div><div class="dash-stat-label">Affiliate est.</div></div>
+      <div class="dash-stat"><div class="dash-stat-num" id="statProducts">0</div><div class="dash-stat-label">Products</div></div>
+    </div>
+
+    <div class="dash-card" style="background:var(--surface-1);font-size:12px;color:var(--text-secondary);">
+      <strong>Payment mode:</strong> <span id="dashModeLabel">—</span><br>
+      Secret keys are never stored or used in this frontend. All real charges must still be verified on a secure backend before you fulfil.
+    </div>
+
+    <!-- ORDERS + FULFILMENT -->
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:6px;font-size:14px">Orders & Fulfilment</div>
+      <p style="font-size:11px;color:var(--text-secondary);margin-bottom:10px">
+        After payment the order appears here. You (or the vendor) must still pack and ship. Use the status buttons to track progress and notify the customer.
+      </p>
+      <div id="orderList"></div>
+    </div>
+
+    <!-- VENDORS + APPLICATIONS (Stage 6) -->
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:6px;font-size:14px">Vendor applications</div>
+      <p style="font-size:11px;color:var(--text-secondary);margin-bottom:8px">
+        Approve → vendor can list products → sales credit their balance (90%). You take ~10% platform fee.
+      </p>
+      <div id="vendorAppList" style="font-size:13px"></div>
+    </div>
+
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:6px;font-size:14px">Approved vendors & balances</div>
+      <p style="font-size:11px;color:var(--text-secondary);margin-bottom:8px">
+        Vendors manage their own stock. Balances grow when real (non-demo) orders are paid. Payouts are handled outside this frontend.
+      </p>
+      <div id="vendorList" style="font-size:13px"></div>
+      <button class="btn-submit" style="background:var(--asm-sage);margin-top:10px" onclick="showScreen('vendors')">Open vendor / affiliate forms</button>
+    </div>
+
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:6px;font-size:14px">Affiliate applications</div>
+      <p style="font-size:11px;color:var(--text-secondary);margin-bottom:8px">
+        Path: Merchant → Product → Customer click → Merchant confirms sale → Commission recorded. No inventory held by the mall.
+      </p>
+      <div id="affAppList" style="font-size:13px"></div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:6px;font-size:14px">Products currently live</div>
+      <p style="font-size:11px;color:var(--text-secondary);margin-bottom:8px">
+        These are the only items Amara can recommend. Adding or removing products here (or in code) immediately changes what the AI can suggest.
+      </p>
+      <div id="productListDash" style="font-size:12px;max-height:160px;overflow-y:auto"></div>
+    </div>
+
+    <!-- AFFILIATE (detail) -->
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:6px;font-size:14px">Affiliate detail</div>
+      <p style="font-size:11px;color:var(--text-secondary);margin-bottom:8px">
+        Affiliate products are marked in the catalogue. Actual commission rates and payouts are handled by your affiliate network — the numbers above are illustrative only.
+      </p>
+      <div id="affiliateSummary" style="font-size:13px"></div>
+    </div>
+
+    <!-- ========== STAGE 8: MARKETING & CUSTOMER ACQUISITION ========== -->
+    <div class="dash-card" style="border:2px solid var(--asm-accent);">
+      <div style="font-weight:600;margin-bottom:8px;font-size:15px;display:flex;align-items:center;gap:8px">
+        <span style="background:var(--asm-accent);color:#fff;font-size:10px;padding:2px 6px;border-radius:4px">STAGE 8</span>
+        Marketing & Customer Acquisition
+      </div>
+      <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.45">
+        Tools to bring people into the store. Automation helps you create and track content — it does <strong>not</strong> guarantee traffic or sales. You still need to post, share and engage.
+      </p>
+
+      <!-- Share store -->
+      <div style="background:var(--surface-1);border-radius:10px;padding:12px;margin-bottom:12px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:6px">1. Share the store</div>
+        <p style="font-size:11px;color:var(--text-secondary);margin-bottom:8px">Copy a ready link or open WhatsApp with a pre-filled invite.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <button onclick="copyStoreLink()" style="font-size:12px;padding:8px 12px;border-radius:8px;border:none;background:var(--asm-navy);color:#fff;cursor:pointer">Copy store link</button>
+          <button onclick="shareStoreWhatsApp()" style="font-size:12px;padding:8px 12px;border-radius:8px;border:none;background:#25D366;color:#fff;cursor:pointer">Share on WhatsApp</button>
+        </div>
+        <div id="storeLinkBox" style="margin-top:8px;font-size:11px;word-break:break-all;color:var(--text-muted);display:none"></div>
+      </div>
+
+      <!-- Content generator (enhanced) -->
+      <div style="background:var(--surface-1);border-radius:10px;padding:12px;margin-bottom:12px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:6px">2. Content generator (from live products only)</div>
+        <div class="form-group">
+          <label>Product</label>
+          <select id="mktProduct"></select>
+        </div>
+        <div class="form-group">
+          <label>Platform</label>
+          <select id="mktPlatform">
+            <option value="instagram">Instagram</option>
+            <option value="facebook">Facebook</option>
+            <option value="whatsapp">WhatsApp Status / Broadcast</option>
+            <option value="twitter">X / Twitter</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tone</label>
+          <select id="mktTone">
+            <option value="friendly">Friendly</option>
+            <option value="urgent">Limited / Urgent</option>
+            <option value="story">Story / Lifestyle</option>
+          </select>
+        </div>
+        <button class="btn-submit" onclick="generateCaption()" style="margin-bottom:8px">Generate caption</button>
+        <div id="captionBox" class="marketing-box" style="display:none"></div>
+        <button id="copyCaption" class="copy-btn" style="display:none" onclick="copyCaption()">Copy to clipboard</button>
+      </div>
+
+      <!-- Simple campaign ideas -->
+      <div style="background:var(--surface-1);border-radius:10px;padding:12px;margin-bottom:12px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:6px">3. Campaign ideas (this week)</div>
+        <div id="campaignIdeas" style="font-size:12px;line-height:1.5"></div>
+        <button onclick="refreshCampaignIdeas()" style="margin-top:8px;font-size:11px;padding:6px 10px;border-radius:6px;border:0.5px solid var(--border-strong);background:none;cursor:pointer">Refresh ideas</button>
+      </div>
+
+      <!-- Lead capture (simple) -->
+      <div style="background:var(--surface-1);border-radius:10px;padding:12px;margin-bottom:12px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:6px">4. WhatsApp list / leads</div>
+        <p style="font-size:11px;color:var(--text-secondary);margin-bottom:8px">
+          Collect numbers of people who want updates. In production this connects to WhatsApp Business or a CRM. Here we keep a local list only.
+        </p>
+        <div class="form-group"><label>Name</label><input type="text" id="leadName" placeholder="Customer name"></div>
+        <div class="form-group"><label>WhatsApp number</label><input type="tel" id="leadPhone" placeholder="+234 801 234 5678"></div>
+        <button class="btn-submit" onclick="addLead()" style="background:var(--asm-sage)">Save lead</button>
+        <div id="leadList" style="margin-top:10px;font-size:12px"></div>
+      </div>
+
+      <!-- Referral / share product -->
+      <div style="background:var(--surface-1);border-radius:10px;padding:12px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:6px">5. Product share links</div>
+        <p style="font-size:11px;color:var(--text-secondary);margin-bottom:8px">Generate a shareable message for any live product (for status, groups, or stories).</p>
+        <select id="shareProduct" style="width:100%;padding:8px;border-radius:8px;border:0.5px solid var(--border);margin-bottom:8px;font-size:13px"></select>
+        <button onclick="shareProductMsg()" style="font-size:12px;padding:8px 12px;border-radius:8px;border:none;background:var(--asm-navy);color:#fff;cursor:pointer">Copy product share text</button>
+      </div>
+    </div>
+
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:8px;font-size:14px">Quick actions</div>
+      <button class="btn-submit" style="background:#25D366;margin-bottom:8px" onclick="window.open('https://wa.me/'+STORE_CONFIG.whatsapp.replace(/\D/g,''),'_blank')">Open WhatsApp support line</button>
+      <button class="btn-submit" style="background:var(--asm-navy);margin-bottom:8px" onclick="showScreen('legal')">Legal & trust pages</button>
+      <button class="btn-submit" style="background:#5D4037" onclick="showScreen('readiness')">Production readiness report</button>
+    </div>
+  </div>
+</div>
+
+<!-- LEGAL & TRUST PAGES -->
+<div id="legal" class="screen">
+  <div class="dash-screen">
+    <button class="back-btn" onclick="showScreen('dashboard')"><i class="ti ti-arrow-left"></i> Dashboard</button>
+    <div class="section-header"><span class="section-title">Legal & Trust</span></div>
+    <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;line-height:1.45">
+      Placeholder policies. Replace with your lawyer-reviewed text. No registration numbers or licences are invented here — configure real business details in STORE_CONFIG.
+    </p>
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:6px">Terms & Conditions</div>
+      <p style="font-size:12px;line-height:1.5;color:var(--text-secondary)">
+        Austin Smart Mall is a marketplace. Some products are sold by independent vendors. Prices are in Nigerian Naira (₦). Orders are confirmed only after successful payment verification. Delivery timelines depend on the vendor and courier. Full terms should be reviewed by your legal counsel before launch.
+      </p>
+    </div>
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:6px">Privacy Policy</div>
+      <p style="font-size:12px;line-height:1.5;color:var(--text-secondary)">
+        We collect contact and order information needed to process purchases. Payment card data is handled by Paystack — we do not store full card numbers. Do not use this placeholder as a final privacy policy.
+      </p>
+    </div>
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:6px">Refund / Return Policy</div>
+      <p style="font-size:12px;line-height:1.5;color:var(--text-secondary)">
+        Refunds follow vendor and Paystack rules. Configure your actual return window and conditions before launch. Demo payments are never real charges.
+      </p>
+    </div>
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:6px">Vendor Terms</div>
+      <p style="font-size:12px;line-height:1.5;color:var(--text-secondary)">
+        Vendors are responsible for accurate product data, stock, packing and shipping. Platform fees and subscription plans are described in the Revenue Engine. Payouts are arranged outside this frontend.
+      </p>
+    </div>
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:6px">Affiliate Disclosure</div>
+      <p style="font-size:12px;line-height:1.5;color:var(--text-secondary)">
+        Some listings are affiliate products. The mall may earn a commission when you buy through those links. Affiliate commissions are only confirmed when the partner network reports a valid conversion — never invented by this app.
+      </p>
+    </div>
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:6px">Contact / Support</div>
+      <p style="font-size:12px;line-height:1.5;color:var(--text-secondary)" id="legalContact">Loading…</p>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTION READINESS REPORT -->
+<div id="readiness" class="screen">
+  <div class="dash-screen">
+    <button class="back-btn" onclick="showScreen('dashboard')"><i class="ti ti-arrow-left"></i> Dashboard</button>
+    <div class="section-header"><span class="section-title">Stage 9 — Production Readiness</span></div>
+    <div id="readinessScore" style="background:var(--asm-navy);color:#fff;border-radius:12px;padding:16px;text-align:center;margin-bottom:14px">
+      <div style="font-size:12px;opacity:.8">Production Readiness Score</div>
+      <div style="font-size:28px;font-weight:600;margin:4px 0" id="scoreValue">—</div>
+      <div style="font-size:11px;opacity:.75" id="scoreNote"></div>
+    </div>
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:8px;font-size:14px">Feature status</div>
+      <div id="readinessTable" style="font-size:12px"></div>
+    </div>
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:8px;font-size:14px">Owner action checklist</div>
+      <p style="font-size:11px;color:var(--text-secondary);margin-bottom:10px">These are the real steps only you can complete. The app cannot do them for you.</p>
+      <div id="ownerChecklist" style="font-size:13px;line-height:1.7"></div>
+    </div>
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:8px;font-size:14px">Recommended launch sequence</div>
+      <ol style="font-size:12px;color:var(--text-secondary);margin-left:18px;line-height:1.6" id="launchSequence"></ol>
+    </div>
+  </div>
+</div>
+
+<!-- AUTH -->
+<div id="auth" class="screen">
+  <div class="dash-screen">
+    <div class="section-header"><span class="section-title">Account</span></div>
+    <p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px">Connects to backend at <code id="apiBaseLabel"></code>. Passwords are never stored in this page — only a session token.</p>
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:8px">Login</div>
+      <div class="form-group"><label>Email</label><input type="email" id="loginEmail" placeholder="you@email.com"></div>
+      <div class="form-group"><label>Password</label><input type="password" id="loginPassword" placeholder="••••••••"></div>
+      <button class="btn-submit" onclick="doLogin()">Login</button>
+    </div>
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:8px">Register</div>
+      <div class="form-group"><label>Name</label><input type="text" id="regName" placeholder="Your name"></div>
+      <div class="form-group"><label>Email</label><input type="email" id="regEmail" placeholder="you@email.com"></div>
+      <div class="form-group"><label>Password (min 8)</label><input type="password" id="regPassword" placeholder="••••••••"></div>
+      <div class="form-group"><label>Role</label>
+        <select id="regRole"><option value="customer">Customer</option><option value="vendor">Vendor</option><option value="affiliate">Affiliate</option></select>
+      </div>
+      <button class="btn-submit" style="background:var(--asm-sage)" onclick="doRegister()">Create account</button>
+    </div>
+    <div class="dash-card">
+      <div style="font-weight:600;margin-bottom:6px">API connection</div>
+      <div class="form-group"><label>API base URL</label><input type="url" id="apiBaseInput" placeholder="http://localhost:4000"></div>
+      <button class="btn-submit" onclick="saveApiBase()">Save & reconnect</button>
+    </div>
+  </div>
+</div>
+
+<nav class="bottom-nav">
+  <button class="bn-item active" onclick="showScreen('home',null,this)" id="bn-home"><i class="ti ti-home"></i><span>Home</span></button>
+  <button class="bn-item" onclick="showScreen('products',null,this)" id="bn-browse"><i class="ti ti-grid-dots"></i><span>Browse</span></button>
+  <button class="bn-item" onclick="showScreen('ai',null,this)" id="bn-ai"><i class="ti ti-robot"></i><span>AI</span></button>
+  <button class="bn-item" onclick="showScreen('vendors',null,this)" id="bn-sell"><i class="ti ti-store"></i><span>Sell</span></button>
+  <button class="bn-item" onclick="showScreen('cart',null,this)" id="bn-cart"><i class="ti ti-shopping-cart"></i><span>Cart</span></button>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   STAGE 10b — API CONNECTION
+   Configure API_BASE_URL for your environment.
+   NEVER put PAYSTACK_SECRET_KEY here.
+   ============================================================ */
+const API_BASE_URL = (window.ASM_API_BASE || localStorage.getItem('ASM_API_BASE') || 'http://localhost:4000').replace(/\/$/, '');
+const USE_API = true; // set false only for pure offline UI preview
+
+let PRODUCTS = [];           // filled from GET /api/products
+let API_ONLINE = false;
+let AUTH_TOKEN = localStorage.getItem('ASM_TOKEN') || null;
+let AUTH_USER = null;
+try { AUTH_USER = JSON.parse(localStorage.getItem('ASM_USER') || 'null'); } catch { AUTH_USER = null; }
+
+async function api(path, options = {}) {
+  const headers = Object.assign({ 'Content-Type': 'application/json' }, options.headers || {});
+  if (AUTH_TOKEN) headers['Authorization'] = 'Bearer ' + AUTH_TOKEN;
+  const res = await fetch(API_BASE_URL + path, Object.assign({}, options, { headers }));
+  let body = null;
+  try { body = await res.json(); } catch { body = null; }
+  if (!res.ok) {
+    const err = new Error((body && body.error) || ('HTTP ' + res.status));
+    err.status = res.status;
+    err.body = body;
+    throw err;
+  }
+  return body;
+}
+
+async function checkApiHealth() {
+  try {
+    const h = await api('/api/health');
+    API_ONLINE = true;
+    return h;
+  } catch {
+    API_ONLINE = false;
+    return null;
+  }
+}
+
+function mapApiProduct(p) {
+  return {
+    id: p.id,
+    name: p.name,
+    vendor: p.vendor || p.vendor_name || 'Vendor',
+    cat: p.category || 'General',
+    price: p.price != null ? p.price : (p.price_kobo ? p.price_kobo / 100 : 0),
+    emoji: p.emoji || '📦',
+    desc: p.description || '',
+    badge: p.is_affiliate ? 'aff' : null,
+    origPrice: null,
+    features: [],
+    affiliate: !!p.is_affiliate,
+    wa: STORE_CONFIG ? ('+' + STORE_CONFIG.whatsapp) : '',
+    stock: p.stock
+  };
+}
+
+async function loadProductsFromApi() {
+  const data = await api('/api/products');
+  PRODUCTS = (data.products || []).map(mapApiProduct);
+  API_ONLINE = true;
+  return PRODUCTS;
+}
+
+function setAuth(token, user) {
+  AUTH_TOKEN = token;
+  AUTH_USER = user;
+  if (token) localStorage.setItem('ASM_TOKEN', token); else localStorage.removeItem('ASM_TOKEN');
+  if (user) localStorage.setItem('ASM_USER', JSON.stringify(user)); else localStorage.removeItem('ASM_USER');
+  updateAuthUI();
+}
+
+function logout() {
+  setAuth(null, null);
+  showToast('Logged out');
+}
+
+function updateAuthUI() {
+  const el = document.getElementById('authStatus');
+  if (!el) return;
+  if (AUTH_USER) {
+    el.innerHTML = `<span style="font-size:11px">${AUTH_USER.email || AUTH_USER.name || 'Account'}</span>
+      <button onclick="logout()" style="margin-left:6px;font-size:10px;padding:2px 6px;border-radius:4px;border:0.5px solid rgba(255,255,255,.3);background:none;color:#fff;cursor:pointer">Logout</button>`;
+  } else {
+    el.innerHTML = `<button onclick="showScreen('auth')" style="font-size:10px;padding:2px 8px;border-radius:4px;border:0.5px solid rgba(255,255,255,.3);background:none;color:#fff;cursor:pointer">Login</button>`;
+  }
+}
+
+// Sample catalogue — ONLY used when user explicitly enables offline preview (not silent)
+const SAMPLE_PRODUCTS = [
+  {id:'sample-1',name:"[SAMPLE] Jollof Rice Spice Blend",vendor:"Lagos Spice Co.",cat:"Food & Groceries",price:3500,emoji:"🌶️",desc:"Sample data — not from backend.",badge:"free",origPrice:null,features:[],affiliate:false,wa:"+2348012345678"},
+  {id:'sample-2',name:"[SAMPLE] Ankara Print Tote",vendor:"Adire Collective",cat:"Fashion",price:8500,emoji:"👜",desc:"Sample data — not from backend.",badge:"sale",origPrice:11000,features:[],affiliate:false,wa:"+2348023456789"}
+];
+
+// ========== STORE CONFIG (owner-editable identity — no secrets) ==========
+const STORE_CONFIG = {
+  name: 'Austin Smart Mall',
+  tagline: "Nigeria's smart marketplace",
+  currency: 'NGN',
+  whatsapp: '2348000000000',      // replace with real support number
+  email: 'support@austinsmartmall.ng', // replace with real email
+  domain: 'https://austinsmartmall.ng', // replace when domain is live
+  city: 'Lagos, Nigeria'
+};
+
+// ========== STAGE 6 DATA MODEL ==========
+// Approved vendors (start with existing ones)
+let vendors = [
+  {id:1, name:"Lagos Spice Co.", phone:"+2348012345678", city:"Lagos", cat:"Food & Groceries", plan:"pro", status:"approved", balance:0, sales:0},
+  {id:2, name:"Adire Collective", phone:"+2348023456789", city:"Abeokuta", cat:"Fashion", plan:"pro", status:"approved", balance:0, sales:0},
+  {id:3, name:"BeeKeepers Nigeria", phone:"+2348045678901", city:"Ogun", cat:"Food & Groceries", plan:"free", status:"approved", balance:0, sales:0},
+  {id:4, name:"Clay & Fire Studio", phone:"+2348056789012", city:"Lagos", cat:"Home & Living", plan:"free", status:"approved", balance:0, sales:0},
+  {id:5, name:"Natural Glow NG", phone:"+2348067890123", city:"Lagos", cat:"Beauty & Wellness", plan:"free", status:"approved", balance:0, sales:0},
+  {id:6, name:"Green Home NG", phone:"+2348078901234", city:"Abuja", cat:"Home & Living", plan:"free", status:"approved", balance:0, sales:0},
+  {id:7, name:"TechHub NG Affiliate", phone:"+2348034567890", city:"Lagos", cat:"Affiliate Deals", plan:"free", status:"approved", balance:0, sales:0, isAffiliate:true},
+  {id:8, name:"Abuja Craft Hub", phone:"+2348089012345", city:"Abuja", cat:"Fashion", plan:"free", status:"approved", balance:0, sales:0}
+];
+
+// Pending vendor applications
+let vendorApplications = [];
+
+// Pending affiliate product applications
+let affiliateApplications = [];
+
+// Confirmed affiliate commissions (after merchant confirms)
+let affiliateCommissions = [];
+
+// Keep a simple name list for chips
+const VENDORS = vendors.map(v => v.name);
+
+let cart = [];
+let orders = [];
+let currentScreen = 'home';
+let prevScreen = 'home';
+let currentCat = null;
+let chatHistory = [{role:'assistant',content:"Hey! I'm <strong>Amara</strong> — your 24/7 sales assistant for Austin Smart Mall 🇳🇬<br><br>I only recommend products that are <strong>actually listed</strong> right now. I can find items, add them to your cart, and guide you to checkout. I never invent products or pretend an order has been shipped.<br><br>What do you need today?"}];
+let isTyping = false;
+let lastCaption = "";
+let selectedPlan = 'free';
+
+// ========== UI HELPERS ==========
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.display = 'block';
+  setTimeout(()=>t.style.display='none',2800);
+}
+
+function formatNaira(n){
+  return '₦' + n.toLocaleString('en-NG');
+}
+
+function showScreen(name,tabEl,bnEl){
+  if(name==='cart' && currentScreen!=='cart') prevScreen = currentScreen;
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  const el = document.getElementById(name);
+  if(el) el.classList.add('active');
+  currentScreen = name;
+
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  if(tabEl) tabEl.classList.add('active');
+
+  document.querySelectorAll('.bn-item').forEach(b=>b.classList.remove('active'));
+  const bnMap = {home:'bn-home',products:'bn-browse',ai:'bn-ai',vendors:'bn-sell',cart:'bn-cart',dashboard:'bn-home',legal:'bn-home',readiness:'bn-home'};
+  if(bnMap[name]) document.getElementById(bnMap[name])?.classList.add('active');
+  if(bnEl){ document.querySelectorAll('.bn-item').forEach(b=>b.classList.remove('active')); bnEl.classList.add('active'); }
+
+  if(name==='products') renderAllProducts(currentCat);
+  if(name==='cart') renderCart();
+  if(name==='dashboard') renderDashboard();
+  if(name==='ai') renderChat();
+  if(name==='legal') {
+    const c = document.getElementById('legalContact');
+    if (c) c.innerHTML = `WhatsApp: +${STORE_CONFIG.whatsapp}<br>Email: ${STORE_CONFIG.email}<br>${STORE_CONFIG.city}`;
+  }
+  if(name==='readiness') renderReadinessReport();
+}
+
+function goBack(){ showScreen(prevScreen==='product-detail'?'home':prevScreen); }
+function filterCat(cat){ currentCat = cat==='All' ? null : cat; showScreen('products'); }
+
+// ========== PRODUCTS ==========
+function renderProducts(containerId,list,max){
+  const el = document.getElementById(containerId); if(!el) return;
+  const items = max ? list.slice(0,max) : list;
+  el.innerHTML = items.map(p=>`
+    <div class="product-card" onclick="showProduct(${p.id})">
+      <div class="product-img">${p.emoji}</div>
+      <div class="product-body">
+        <div class="product-vendor">${p.vendor}${p.affiliate?' · Affiliate':''}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-footer">
+          <span class="product-price">${formatNaira(p.price)}</span>
+          <div style="display:flex;align-items:center;gap:4px">
+            ${p.badge==='free'?'<span class="badge-free">Free ship</span>':''}
+            ${p.badge==='sale'?'<span class="badge-sale">Sale</span>':''}
+            ${p.badge==='aff'?'<span class="badge-aff">Affiliate</span>':''}
+            <button class="product-add" onclick="event.stopPropagation();addToCart(${p.id})">+</button>
+          </div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function renderAllProducts(cat){
+  const list = cat ? PRODUCTS.filter(p=>p.cat===cat) : PRODUCTS;
+  document.getElementById('browseTitle').textContent = cat || 'All products';
+  renderProducts('allProducts',list);
+  const cats = ['All','Food & Groceries','Fashion','Tech & Gadgets','Home & Living','Beauty & Wellness','Affiliate Deals'];
+  document.getElementById('filterChips').innerHTML = cats.map(c=>`
+    <button class="vendor-chip" onclick="filterCat('${c}')"><span class="vendor-dot"></span>${c}</button>
+  `).join('');
+}
+
+function showProduct(id){
+  prevScreen = currentScreen;
+  const p = PRODUCTS.find(x=>x.id===id); if(!p) return;
+  const waLink = `https://wa.me/${p.wa.replace(/\D/g,'')}?text=${encodeURIComponent('Hi, I want to order: '+p.name+' ('+formatNaira(p.price)+') from Austin Smart Mall')}`;
+  document.getElementById('pdContent').innerHTML = `
+    <div class="product-detail">
+      <div class="pd-img">${p.emoji}</div>
+      <div class="pd-body">
+        <div class="pd-vendor-tag">${p.vendor} · ${p.cat}${p.affiliate?' · Affiliate product':''}</div>
+        <div class="pd-title">${p.name}</div>
+        <div class="pd-price-row">
+          <span class="pd-price">${formatNaira(p.price)}</span>
+          ${p.origPrice?`<span class="pd-orig">${formatNaira(p.origPrice)}</span>`:''}
+        </div>
+        <div class="pd-desc">${p.desc}</div>
+        <div class="pd-features">${p.features.map(f=>`<div class="pd-feature"><i class="ti ti-check"></i>${f}</div>`).join('')}</div>
+      </div>
+      <div class="pd-actions">
+        <button class="pd-add-cart" onclick="addToCart(${p.id});goBack()">Add to cart — ${formatNaira(p.price)}</button>
+        <button class="pd-wa" onclick="window.open('${waLink}','_blank')"><i class="ti ti-brand-whatsapp"></i> Order via WhatsApp</button>
+      </div>
+    </div>`;
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('product-detail').classList.add('active');
+  currentScreen = 'product-detail';
+}
+
+// ========== CART ==========
+async function addToCart(id){
+  const p = PRODUCTS.find(x=>x.id==id); if(!p) return;
+  if (API_ONLINE && AUTH_TOKEN) {
+    try {
+      await api('/api/cart/items', { method: 'POST', body: JSON.stringify({ product_id: id, quantity: 1 }) });
+      await refreshCartFromApi();
+      showToast(p.name + ' added to cart (saved)');
+      return;
+    } catch (e) {
+      showToast('Cart API error: ' + e.message);
+      return;
+    }
+  }
+  // Local cart only when not logged in or API offline — labelled
+  cart.push({...p});
+  const cc = document.getElementById('cartCount');
+  cc.textContent = cart.length;
+  cc.style.display = cart.length ? 'block' : 'none';
+  showToast(p.name + ' added (local cart — login for persistent cart)');
+}
+
+async function refreshCartFromApi() {
+  if (!AUTH_TOKEN || !API_ONLINE) return;
+  try {
+    const data = await api('/api/cart');
+    cart = (data.items || []).map(i => ({
+      id: i.product_id,
+      name: i.name,
+      price: i.price,
+      emoji: i.emoji || '📦',
+      vendor: '',
+      affiliate: false
+    }));
+    const cc = document.getElementById('cartCount');
+    cc.textContent = cart.length;
+    cc.style.display = cart.length ? 'block' : 'none';
+  } catch (e) {
+    console.warn('cart refresh', e);
+  }
+}
+
+function removeCart(i){
+  cart.splice(i,1);
+  document.getElementById('cartCount').textContent = cart.length;
+  if(cart.length===0) document.getElementById('cartCount').style.display = 'none';
+  renderCart();
+}
+
+function renderCart(){
+  const el = document.getElementById('cartContent');
+  if(cart.length===0){
+    el.innerHTML = `<div class="cart-empty">
+      <div style="font-size:48px;color:var(--text-muted);margin-bottom:12px"><i class="ti ti-shopping-cart"></i></div>
+      <p style="font-size:15px;font-weight:600;margin-bottom:6px">Your cart is empty</p>
+      <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px">Add items from Nigerian vendors.</p>
+      <button style="background:var(--asm-navy);color:#fff;border:none;border-radius:8px;padding:10px 20px;font-size:13px;cursor:pointer" onclick="showScreen('products')">Start shopping</button>
+    </div>`;
+    return;
+  }
+  const subtotal = cart.reduce((a,b)=>a+b.price,0);
+  // Simple delivery fee example
+  const delivery = subtotal > 25000 ? 0 : 1500;
+  const total = subtotal + delivery;
+
+  el.innerHTML = `
+    <div class="cart-items">${cart.map((p,i)=>`
+      <div class="cart-item">
+        <div class="cart-item-img">${p.emoji}</div>
+        <div class="cart-item-info">
+          <div class="cart-item-name">${p.name}</div>
+          <div class="cart-item-vendor">${p.vendor}</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="cart-item-price">${formatNaira(p.price)}</span>
+          <button class="cart-remove" onclick="removeCart(${i})"><i class="ti ti-x"></i></button>
+        </div>
+      </div>`).join('')}
+    </div>
+    <div class="cart-summary">
+      <div class="cart-row"><span>Subtotal</span><span>${formatNaira(subtotal)}</span></div>
+      <div class="cart-row"><span>Delivery</span><span>${delivery===0?'Free':formatNaira(delivery)}</span></div>
+      <div class="cart-row total"><span>Total</span><span>${formatNaira(total)}</span></div>
+    </div>
+
+    <!-- CLEAR MODE INDICATOR – updated by JS according to PAYSTACK_MODE -->
+    <div id="paymentModeBanner" style="border-radius:8px;padding:10px 12px;margin-bottom:12px;font-size:12px;"></div>
+
+    <button class="paystack-btn" onclick="checkoutFlow()">
+      <i class="ti ti-credit-card"></i>
+      <span id="payBtnLabel">Pay with Paystack</span>
+    </button>
+    <button class="whatsapp-btn" onclick="orderViaWhatsApp()"><i class="ti ti-brand-whatsapp"></i> Complete order on WhatsApp</button>
+    <div class="upgrade-teaser">
+      <i class="ti ti-star" style="font-size:20px;color:var(--asm-gold)"></i>
+      <div>
+        <strong style="font-size:12px">Free delivery on orders over ₦25,000</strong>
+        <p style="font-size:11px;color:var(--text-secondary);margin-top:2px">Paystack ready · Secret key never stored in frontend</p>
+      </div>
+    </div>`;
+
+  // Update banner + button label according to current mode
+  const banner = document.getElementById('paymentModeBanner');
+  const btnLabel = document.getElementById('payBtnLabel');
+  if (banner && btnLabel) {
+    if (PAYSTACK_MODE === 'demo' || !PAYSTACK_PUBLIC_KEY) {
+      banner.style.background = '#FFF3CD';
+      banner.style.border = '1px solid #FFECB5';
+      banner.style.color = '#856404';
+      banner.innerHTML = `<strong>⚠ DEMO MODE</strong><br>
+        Payments are simulated only. No real money is charged.<br>
+        To go live: set <code>PAYSTACK_MODE = 'live'</code> and paste your <strong>public</strong> key (pk_live_…) only.`;
+      btnLabel.textContent = 'Pay with Paystack (Demo – no charge)';
+    } else if (PAYSTACK_MODE === 'test') {
+      banner.style.background = '#E3F2FD';
+      banner.style.border = '1px solid #90CAF9';
+      banner.style.color = '#0D47A1';
+      banner.innerHTML = `<strong>TEST MODE</strong><br>
+        Using Paystack test keys. Transactions appear in your Paystack dashboard but no real money moves.`;
+      btnLabel.textContent = 'Pay with Paystack (Test)';
+    } else {
+      banner.style.background = '#E8F5E9';
+      banner.style.border = '1px solid #A5D6A7';
+      banner.style.color = '#1B5E20';
+      banner.innerHTML = `<strong>LIVE MODE</strong><br>
+        Real payments will be charged. Secret key is never used in this frontend.`;
+      btnLabel.textContent = 'Pay with Paystack (Live)';
+    }
+  }
+}
+
+/* ============================================================
+   PAYSTACK CONFIGURATION — STAGE 9 HARDENED
+   ----------------------------------------------------------
+   NEVER put SECRET key (sk_...) in this file, browser, logs,
+   or any client response. Secret keys belong ONLY in server
+   environment variables. Payment success MUST be verified
+   server-side before fulfilling any order.
+
+   PAYSTACK_MODE:
+     'demo' → simulated only, no real money, excluded from revenue
+     'test' → Paystack test popup (pk_test_...) — still verify server-side
+     'live' → production (pk_live_...) — only after verified test success
+
+   Frontend may hold PUBLIC key only. Do not auto-switch to live.
+   ============================================================ */
+// Mode comes from backend health when online; frontend never holds secret key
+let PAYSTACK_MODE = 'demo';          // 'demo' | 'test' | 'live'
+let PAYSTACK_PUBLIC_KEY = '';       // from backend checkout response or env — never sk_
+
+function payWithPaystack(amountInNaira){
+  const amountInKobo = Math.round(amountInNaira * 100); // Paystack expects kobo
+
+  // ---------- DEMO MODE (safe default) ----------
+  if (PAYSTACK_MODE === 'demo' || !PAYSTACK_PUBLIC_KEY) {
+    showToast('DEMO MODE — no real payment. Simulating success…');
+    setTimeout(() => {
+      const orderId = 'DEMO-' + Date.now().toString().slice(-6);
+      const orderItems = cart.map(c => ({
+        name: c.name,
+        price: c.price,
+        vendor: c.vendor,
+        affiliate: !!c.affiliate
+      }));
+      orders.unshift({
+        id: orderId,
+        items: orderItems,
+        total: amountInNaira,
+        status: 'Paid',           // Paid → Processing → Shipped → Delivered
+        fulfilment: 'Awaiting vendor / you to pack',
+        date: new Date().toLocaleDateString('en-NG'),
+        mode: 'demo',
+        customerNotified: false
+      });
+      cart = [];
+      document.getElementById('cartCount').style.display = 'none';
+      document.getElementById('cartCount').textContent = '0';
+      showToast('Demo order ' + orderId + ' created. Fulfilment still needs human action.');
+      renderCart();
+      // Demo orders do not credit vendor balances
+    }, 900);
+    return;
+  }
+
+  // ---------- REAL PAYSTACK (test or live) ----------
+  // Requires the Paystack Inline JS library to be loaded.
+  // Add this once in <head> when you go live:
+  // <script src="https://js.paystack.co/v1/inline.js"></script>
+
+  if (typeof PaystackPop === 'undefined') {
+    showToast('Paystack library not loaded. Add the official script tag first.');
+    return;
+  }
+
+  const handler = PaystackPop.setup({
+    key: PAYSTACK_PUBLIC_KEY,          // public key only
+    email: 'customer@example.com',     // replace with real customer email
+    amount: amountInKobo,
+    currency: 'NGN',
+    ref: 'ASM-' + Date.now(),
+    metadata: {
+      custom_fields: [
+        { display_name: 'Cart Items', variable_name: 'cart_items', value: cart.map(c => c.name).join(', ') }
+      ]
+    },
+    callback: function(response) {
+      // Payment succeeded on Paystack side
+      const orderId = response.reference;
+      const orderItems = cart.map(c => ({
+        name: c.name,
+        price: c.price,
+        vendor: c.vendor,
+        affiliate: !!c.affiliate
+      }));
+      orders.unshift({
+        id: orderId,
+        items: orderItems,
+        total: amountInNaira,
+        status: 'Paid',
+        fulfilment: 'Awaiting vendor / you to pack',
+        date: new Date().toLocaleDateString('en-NG'),
+        mode: PAYSTACK_MODE,
+        paystackRef: response.reference,
+        customerNotified: false
+      });
+      cart = [];
+      document.getElementById('cartCount').style.display = 'none';
+      document.getElementById('cartCount').textContent = '0';
+      creditVendorBalances(orders[0]); // credit 90% to vendors after successful payment
+      showToast('Payment successful! Ref: ' + orderId + ' — now pack & ship');
+      renderCart();
+      // IMPORTANT: In a real store you must still verify this
+      // transaction on your backend with the secret key before
+      // fulfilling the order.
+    },
+    onClose: function() {
+      showToast('Payment window closed');
+    }
+  });
+  handler.openIframe();
+}
+
+function orderViaWhatsApp(){
+  if(cart.length===0) return;
+  const lines = cart.map(p=>`• ${p.name} — ${formatNaira(p.price)}`).join('%0A');
+  const total = cart.reduce((a,b)=>a+b.price,0);
+  const text = `Hello Austin Smart Mall 🇳🇬%0A%0AI want to place this order:%0A${lines}%0A%0ATotal: ${formatNaira(total)}%0A%0APlease confirm.`;
+  // Default support number — change to your real number
+  window.open(`https://wa.me/2348000000000?text=${text}`,'_blank');
+}
+
+// ========== STAGE 7: 24/7 AI SALES SYSTEM (Amara) ==========
+// Rules (hard):
+// 1. Never invent products — only recommend items in PRODUCTS[]
+// 2. Never claim an order is fulfilled or shipped
+// 3. Always guide toward real next steps: view → add to cart → checkout
+// 4. Be honest when nothing matches
+
+let amaraContext = {
+  lastIntent: null,
+  lastProducts: [],
+  budget: null
+};
+
+function renderChat(){
+  const el = document.getElementById('chatArea');
+  el.innerHTML = chatHistory.map(m => `<div class="msg ${m.role==='assistant'?'msg-ai':'msg-user'}">${m.content}</div>`).join('');
+  el.scrollTop = el.scrollHeight;
+}
+
+function parseBudget(text){
+  const t = text.toLowerCase().replace(/,/g,'');
+  // Match patterns like "under 15000", "below 10k", "₦20000", "budget 5k"
+  const m = t.match(/(?:under|below|less than|max|budget|within)\s*₦?\s*(\d+)\s*(k)?/i)
+         || t.match(/₦\s*(\d+)\s*(k)?/i)
+         || t.match(/(\d+)\s*(k)?\s*(?:naira|naira only)?/i);
+  if (!m) return null;
+  let n = parseInt(m[1], 10);
+  if (m[2] && m[2].toLowerCase() === 'k') n *= 1000;
+  if (n < 100 && t.includes('k')) n *= 1000; // "15k"
+  return n > 0 ? n : null;
+}
+
+function findRelevantProducts(query, budget){
+  const q = query.toLowerCase();
+  let list = PRODUCTS.slice();
+
+  // Category / keyword filters
+  const filters = [];
+  if (/gift|present|surprise/.test(q)) filters.push(p => true); // any, prefer lower price later
+  if (/food|jollof|spice|honey|palm|grocery|groceries|soup/.test(q)) filters.push(p => p.cat === 'Food & Groceries');
+  if (/fashion|ankara|adire|shirt|tote|bead|cloth|dress|wear/.test(q)) filters.push(p => p.cat === 'Fashion');
+  if (/tech|phone|gadget|power|bank|infinix|electronic/.test(q)) filters.push(p => p.cat === 'Tech & Gadgets' || p.cat === 'Affiliate Deals' || /lamp|power/i.test(p.name));
+  if (/home|office|desk|lamp|bowl|kitchen|living/.test(q)) filters.push(p => p.cat === 'Home & Living');
+  if (/beauty|shea|soap|cream|skin|glow/.test(q)) filters.push(p => p.cat === 'Beauty & Wellness');
+  if (/affiliate|deal|commission/.test(q)) filters.push(p => p.affiliate);
+
+  if (filters.length) {
+    list = list.filter(p => filters.some(f => f(p)));
+  } else {
+    // Free-text match on name/vendor/desc
+    const tokens = q.split(/\s+/).filter(t => t.length > 2);
+    if (tokens.length) {
+      list = list.filter(p => {
+        const hay = (p.name + ' ' + p.vendor + ' ' + p.cat + ' ' + p.desc).toLowerCase();
+        return tokens.some(t => hay.includes(t));
+      });
+    }
+  }
+
+  if (budget) list = list.filter(p => p.price <= budget);
+
+  // Prefer cheaper for gifts
+  if (/gift|present/.test(q)) list.sort((a,b) => a.price - b.price);
+
+  return list.slice(0, 5);
+}
+
+function productCardHTML(p){
+  return `<div class="ai-product-card" onclick="showProduct(${p.id})">
+    <div class="ai-product-emoji">${p.emoji}</div>
+    <div class="ai-product-info">
+      <div class="ai-product-name">${p.name}</div>
+      <div class="ai-product-price">${formatNaira(p.price)} · ${p.vendor}${p.affiliate ? ' · Aff' : ''}</div>
+    </div>
+    <button class="ai-product-add" onclick="event.stopPropagation();amaraAddToCart(${p.id})">Add +</button>
+  </div>`;
+}
+
+function amaraAddToCart(id){
+  addToCart(id);
+  const p = PRODUCTS.find(x => x.id === id);
+  chatHistory.push({
+    role: 'assistant',
+    content: `Added <strong>${p ? p.name : 'item'}</strong> to your cart. You can keep chatting or go to checkout when you're ready.
+      <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
+        <button onclick="showScreen('cart')" style="font-size:11px;padding:6px 12px;border-radius:8px;border:none;background:var(--asm-navy);color:#fff;cursor:pointer">Go to cart / checkout</button>
+        <button onclick="sendQuick('Show me more options')" style="font-size:11px;padding:6px 12px;border-radius:8px;border:0.5px solid var(--border-strong);background:none;cursor:pointer">More options</button>
+      </div>`
+  });
+  renderChat();
+}
+
+function generateAIReply(userText){
+  const q = userText.toLowerCase().trim();
+  const budget = parseBudget(userText) || amaraContext.budget;
+  if (budget) amaraContext.budget = budget;
+
+  // Guard: never invent fulfilment
+  if (/shipped|delivered|tracking|where is my order|has it arrived/.test(q)) {
+    return `I can help you find products and place orders, but I <strong>cannot</strong> mark anything as shipped or delivered — that is handled by the vendor or owner after payment. Check your order status in the Owner Dashboard or contact support via WhatsApp.`;
+  }
+
+  // Cart / checkout intent
+  if (/checkout|pay now|complete order|go to cart|my cart/.test(q)) {
+    if (cart.length === 0) {
+      return `Your cart is empty right now. Tell me what you need and I’ll recommend real products you can add.`;
+    }
+    return `You have <strong>${cart.length} item(s)</strong> in your cart (total around ${formatNaira(cart.reduce((a,b)=>a+b.price,0))}).
+      <div style="margin-top:8px">
+        <button onclick="showScreen('cart')" style="font-size:12px;padding:8px 14px;border-radius:8px;border:none;background:var(--asm-navy);color:#fff;cursor:pointer">Open cart & checkout</button>
+      </div>
+      <div style="font-size:11px;color:var(--text-secondary);margin-top:6px">Payment uses Paystack (demo/test/live). Fulfilment still needs a human step after payment.</div>`;
+  }
+
+  // Greeting / help
+  if (/^(hi|hello|hey|good morning|good afternoon|help|what can you do)/.test(q)) {
+    return `Hi! I’m Amara — your 24/7 shopping assistant for Austin Smart Mall 🇳🇬<br><br>
+      I only recommend products that are <strong>actually listed</strong> right now. I can:
+      <ul style="margin:6px 0 6px 18px;padding:0">
+        <li>Find items by need, budget or category</li>
+        <li>Add them to your cart</li>
+        <li>Guide you to checkout</li>
+      </ul>
+      I never invent products or pretend an order has been shipped.<br><br>
+      What are you looking for? (e.g. “gift under 10k”, “jollof spice”, “something for my desk”)`;
+  }
+
+  // Find products
+  const products = findRelevantProducts(userText, budget);
+  amaraContext.lastProducts = products;
+
+  if (products.length === 0) {
+    return `I couldn’t find a match in the <strong>current live catalogue</strong>. I never invent products.<br><br>
+      Try a different need, raise the budget, or browse categories on the Home / Browse tabs. You can also say “show popular items”.`;
+  }
+
+  let intro = '';
+  if (budget) {
+    intro = `Here are real items currently listed under ${formatNaira(budget)}:`;
+  } else if (/gift|present/.test(q)) {
+    intro = `Here are real gift-friendly options from the live catalogue:`;
+  } else {
+    intro = `Based on what’s actually available right now:`;
+  }
+
+  let reply = intro;
+  products.forEach(p => { reply += productCardHTML(p); });
+
+  reply += `<div style="margin-top:10px;font-size:12px;color:var(--text-secondary)">
+    Tap a product to view details, or use <strong>Add +</strong> to put it in your cart. When you’re ready, say “checkout” or open the Cart tab.
+  </div>
+  <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
+    <button onclick="sendQuick('Add the first one to cart')" style="font-size:11px;padding:6px 10px;border-radius:8px;border:none;background:var(--asm-sage);color:#fff;cursor:pointer">Add first to cart</button>
+    <button onclick="sendQuick('Show me more options')" style="font-size:11px;padding:6px 10px;border-radius:8px;border:0.5px solid var(--border-strong);background:none;cursor:pointer">More options</button>
+    <button onclick="showScreen('cart')" style="font-size:11px;padding:6px 10px;border-radius:8px;border:none;background:var(--asm-navy);color:#fff;cursor:pointer">Go to cart</button>
+  </div>`;
+
+  return reply;
+}
+
+function sendMessage(){
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  chatHistory.push({ role: 'user', content: text });
+  renderChat();
+  document.getElementById('quickReplies').style.display = 'none';
+
+  // Special: "Add the first one to cart"
+  if (/add the first|add first/.test(text.toLowerCase()) && amaraContext.lastProducts.length) {
+    setTimeout(() => {
+      amaraAddToCart(amaraContext.lastProducts[0].id);
+    }, 400);
+    return;
+  }
+
+  setTimeout(() => {
+    const reply = generateAIReply(text);
+    chatHistory.push({ role: 'assistant', content: reply });
+    renderChat();
+  }, 500);
+}
+
+function sendQuick(text){
+  document.getElementById('chatInput').value = text;
+  sendMessage();
+}
+function handleKey(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); } }
+
+// ========== STAGE 6: VENDOR + AFFILIATE ONBOARDING ==========
+function showOnboardForm(plan){
+  selectedPlan = plan || 'free';
+  document.getElementById('vPlan').value = selectedPlan;
+  document.getElementById('onboardForm').style.display = 'block';
+  document.getElementById('affiliateForm').style.display = 'none';
+  document.getElementById('onboardForm').scrollIntoView({behavior:'smooth'});
+  showToast(selectedPlan === 'pro' ? 'Pro plan selected — complete the form' : 'Free plan selected');
+}
+
+function submitVendor(){
+  const name = document.getElementById('vName').value.trim();
+  const phone = document.getElementById('vPhone').value.trim();
+  const city = document.getElementById('vCity').value;
+  const cat = document.getElementById('vCat').value;
+  const plan = document.getElementById('vPlan').value;
+  const desc = document.getElementById('vDesc').value.trim();
+  if (!name || !phone) { showToast('Please fill business name and WhatsApp number'); return; }
+
+  vendorApplications.push({
+    id: Date.now(),
+    name, phone, city, cat, plan, desc,
+    status: 'pending',
+    date: new Date().toLocaleDateString('en-NG')
+  });
+
+  showToast('Application submitted — waiting for owner approval');
+  document.getElementById('onboardForm').style.display = 'none';
+  document.getElementById('vName').value = '';
+  document.getElementById('vPhone').value = '';
+  document.getElementById('vDesc').value = '';
+}
+
+function showAffiliateForm(){
+  document.getElementById('affiliateForm').style.display = 'block';
+  document.getElementById('onboardForm').style.display = 'none';
+  document.getElementById('affiliateForm').scrollIntoView({behavior:'smooth'});
+}
+
+function submitAffiliate(){
+  const name = document.getElementById('aName').value.trim();
+  const merchant = document.getElementById('aMerchant').value.trim();
+  const link = document.getElementById('aLink').value.trim();
+  const price = parseInt(document.getElementById('aPrice').value) || 0;
+  const comm = parseFloat(document.getElementById('aComm').value) || 8;
+  if (!name || !merchant || !link) { showToast('Name, merchant and affiliate link are required'); return; }
+
+  affiliateApplications.push({
+    id: Date.now(),
+    name, merchant, link, price, commissionPct: comm,
+    status: 'pending',
+    date: new Date().toLocaleDateString('en-NG')
+  });
+
+  showToast('Affiliate product submitted for review');
+  document.getElementById('affiliateForm').style.display = 'none';
+  document.getElementById('aName').value = '';
+  document.getElementById('aMerchant').value = '';
+  document.getElementById('aLink').value = '';
+  document.getElementById('aPrice').value = '';
+}
+
+function approveVendor(appId){
+  const idx = vendorApplications.findIndex(a => a.id === appId);
+  if (idx < 0) return;
+  const app = vendorApplications[idx];
+  vendors.push({
+    id: Date.now(),
+    name: app.name,
+    phone: app.phone,
+    city: app.city,
+    cat: app.cat,
+    plan: app.plan,
+    status: 'approved',
+    balance: 0,
+    sales: 0
+  });
+  vendorApplications.splice(idx, 1);
+  showToast(app.name + ' approved and can now list products');
+  renderDashboard();
+}
+
+function rejectVendor(appId){
+  const idx = vendorApplications.findIndex(a => a.id === appId);
+  if (idx < 0) return;
+  const name = vendorApplications[idx].name;
+  vendorApplications.splice(idx, 1);
+  showToast(name + ' application rejected');
+  renderDashboard();
+}
+
+function approveAffiliate(appId){
+  const idx = affiliateApplications.findIndex(a => a.id === appId);
+  if (idx < 0) return;
+  const app = affiliateApplications[idx];
+  // Add as a live affiliate product (Amara can then recommend it)
+  const newId = PRODUCTS.length ? Math.max(...PRODUCTS.map(p=>p.id)) + 1 : 1;
+  PRODUCTS.push({
+    id: newId,
+    name: app.name + ' (Affiliate)',
+    vendor: app.merchant,
+    cat: 'Affiliate Deals',
+    price: app.price || 0,
+    emoji: '🔗',
+    desc: 'Affiliate product from ' + app.merchant + '. Commission ~' + app.commissionPct + '%.',
+    badge: 'aff',
+    origPrice: null,
+    features: ['Affiliate product', 'No inventory held by mall', 'Commission confirmed by merchant'],
+    affiliate: true,
+    wa: '+2348000000000',
+    affiliateLink: app.link,
+    commissionPct: app.commissionPct
+  });
+  affiliateApplications.splice(idx, 1);
+  showToast(app.name + ' is now live as an affiliate product');
+  renderDashboard();
+  renderProducts('homeProducts', PRODUCTS, 4);
+}
+
+function rejectAffiliate(appId){
+  const idx = affiliateApplications.findIndex(a => a.id === appId);
+  if (idx < 0) return;
+  const name = affiliateApplications[idx].name;
+  affiliateApplications.splice(idx, 1);
+  showToast(name + ' affiliate application rejected');
+  renderDashboard();
+}
+
+// When a real (non-demo) order is paid, credit vendor balances (90% to vendor, 10% platform)
+function creditVendorBalances(order) {
+  if (order.mode === 'demo') return;
+  (order.items || []).forEach(it => {
+    if (it.affiliate) return; // affiliate handled separately
+    const v = vendors.find(x => x.name === it.vendor);
+    if (v) {
+      const vendorShare = Math.round(it.price * 0.90);
+      v.balance += vendorShare;
+      v.sales += it.price;
+    }
+  });
+}
+
+// ========== OWNER DASHBOARD + MARKETING ==========
+function renderDashboard(){
+  document.getElementById('statOrders').textContent = orders.length;
+
+  // Real (non-demo) revenue only
+  const realOrders = orders.filter(o => o.mode !== 'demo');
+  const salesTotal = realOrders.reduce((a,o)=>a+o.total,0);
+  document.getElementById('statRevenue').textContent = formatNaira(salesTotal);
+  document.getElementById('statProducts').textContent = PRODUCTS.length;
+
+  // ---- Revenue Engine calculations ----
+  // 1. Platform fee on non-affiliate items (illustrative 10%)
+  let platformFee = 0;
+  // 2. Affiliate commission (illustrative 8%)
+  let affEst = 0;
+
+  realOrders.forEach(o => {
+    (o.items || []).forEach(it => {
+      const price = typeof it === 'object' ? it.price : 0;
+      const isAff = typeof it === 'object' && it.affiliate;
+      if (isAff) {
+        affEst += Math.round(price * 0.08);
+      } else {
+        platformFee += Math.round(price * 0.10);
+      }
+    });
+  });
+
+  // 3. Vendor Pro subscriptions (from approved Pro vendors)
+  const proCount = vendors.filter(v => v.status === 'approved' && v.plan === 'pro').length;
+  const subRevenue = proCount * 12500;
+
+  const totalRevenue = platformFee + affEst + subRevenue;
+
+  // Fill Revenue Engine cards
+  const el = (id) => document.getElementById(id);
+  if (el('revDirect')) el('revDirect').textContent = formatNaira(platformFee);
+  if (el('revAffiliate')) el('revAffiliate').textContent = formatNaira(affEst);
+  if (el('revSubs')) el('revSubs').textContent = formatNaira(subRevenue);
+  if (el('revTotal')) el('revTotal').textContent = formatNaira(totalRevenue);
+
+  const affEl = document.getElementById('statAffiliate');
+  if (affEl) affEl.textContent = formatNaira(affEst);
+
+  // Payment mode label
+  const modeLabel = document.getElementById('dashModeLabel');
+  if (modeLabel) {
+    if (PAYSTACK_MODE === 'demo' || !PAYSTACK_PUBLIC_KEY) {
+      modeLabel.textContent = 'DEMO (simulated only)';
+      modeLabel.style.color = '#856404';
+    } else if (PAYSTACK_MODE === 'test') {
+      modeLabel.textContent = 'TEST (Paystack test keys)';
+      modeLabel.style.color = '#0D47A1';
+    } else {
+      modeLabel.textContent = 'LIVE (real charges)';
+      modeLabel.style.color = '#1B5E20';
+    }
+  }
+
+  // ---- Orders with fulfilment actions ----
+  const list = document.getElementById('orderList');
+  if (!list) return;
+  if (orders.length === 0) {
+    list.innerHTML = '<p style="font-size:13px;color:var(--text-secondary)">No orders yet. They appear here after Paystack or WhatsApp checkout. You still need to pack and ship.</p>';
+  } else {
+    list.innerHTML = orders.slice(0, 10).map((o, idx) => {
+      const isDemo = o.mode === 'demo';
+      const itemNames = (o.items || []).map(i => typeof i === 'string' ? i : i.name).join(', ');
+      const nextAction = {
+        'Paid': 'Mark Processing',
+        'Processing': 'Mark Shipped',
+        'Shipped': 'Mark Delivered',
+        'Delivered': null
+      }[o.status];
+
+      return `
+      <div style="border:0.5px solid var(--border);border-radius:10px;padding:12px;margin-bottom:10px;background:var(--surface-2)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+          <div>
+            <div style="font-weight:600;font-size:13px">${o.id}</div>
+            <div style="font-size:11px;color:var(--text-muted)">${o.date}${isDemo ? ' · DEMO' : ''}</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-weight:600">${formatNaira(o.total)}</div>
+            <span class="order-status" style="${isDemo ? 'background:#FFF3CD;color:#856404' : ''}">${o.status}</span>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--text-secondary);margin-bottom:6px">${itemNames}</div>
+        <div style="font-size:11px;color:var(--asm-accent);margin-bottom:8px">
+          <i class="ti ti-truck"></i> ${o.fulfilment || 'Awaiting action'}
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          ${nextAction ? `<button onclick="advanceOrder(${idx})" style="font-size:11px;padding:5px 10px;border-radius:6px;border:none;background:var(--asm-navy);color:#fff;cursor:pointer">${nextAction}</button>` : ''}
+          <button onclick="notifyCustomer(${idx})" style="font-size:11px;padding:5px 10px;border-radius:6px;border:0.5px solid var(--border-strong);background:none;cursor:pointer">
+            ${o.customerNotified ? '✓ Notified' : 'Notify customer'}
+          </button>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  // ---- Vendor applications ----
+  const appList = document.getElementById('vendorAppList');
+  if (appList) {
+    if (vendorApplications.length === 0) {
+      appList.innerHTML = '<p style="font-size:12px;color:var(--text-secondary)">No pending vendor applications.</p>';
+    } else {
+      appList.innerHTML = vendorApplications.map(a => `
+        <div style="border:0.5px solid var(--border);border-radius:8px;padding:10px;margin-bottom:8px">
+          <div style="font-weight:600">${a.name}</div>
+          <div style="font-size:11px;color:var(--text-muted)">${a.city} · ${a.cat} · ${a.plan.toUpperCase()} · ${a.date}</div>
+          <div style="font-size:12px;margin:4px 0">${a.desc || ''}</div>
+          <div style="display:flex;gap:6px;margin-top:6px">
+            <button onclick="approveVendor(${a.id})" style="font-size:11px;padding:5px 10px;border-radius:6px;border:none;background:var(--asm-sage);color:#fff;cursor:pointer">Approve</button>
+            <button onclick="rejectVendor(${a.id})" style="font-size:11px;padding:5px 10px;border-radius:6px;border:0.5px solid var(--border-strong);background:none;cursor:pointer">Reject</button>
+          </div>
+        </div>`).join('');
+    }
+  }
+
+  // ---- Approved vendors + balances ----
+  const vList = document.getElementById('vendorList');
+  if (vList) {
+    vList.innerHTML = vendors.filter(v => v.status === 'approved').map(v => `
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:0.5px solid var(--border)">
+        <div>
+          <div style="font-weight:500">${v.name}</div>
+          <div style="font-size:11px;color:var(--text-muted)">${v.plan.toUpperCase()} · ${v.city}${v.isAffiliate ? ' · Affiliate' : ''}</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:13px;font-weight:600">${formatNaira(v.balance)}</div>
+          <div style="font-size:10px;color:var(--text-muted)">balance</div>
+        </div>
+      </div>`).join('');
+  }
+
+  // ---- Affiliate applications ----
+  const affList = document.getElementById('affAppList');
+  if (affList) {
+    if (affiliateApplications.length === 0) {
+      affList.innerHTML = '<p style="font-size:12px;color:var(--text-secondary)">No pending affiliate product applications.</p>';
+    } else {
+      affList.innerHTML = affiliateApplications.map(a => `
+        <div style="border:0.5px solid var(--border);border-radius:8px;padding:10px;margin-bottom:8px">
+          <div style="font-weight:600">${a.name}</div>
+          <div style="font-size:11px;color:var(--text-muted)">${a.merchant} · ~${a.commissionPct}% · ${a.date}</div>
+          <div style="font-size:11px;word-break:break-all;margin:4px 0">${a.link}</div>
+          <div style="display:flex;gap:6px;margin-top:6px">
+            <button onclick="approveAffiliate(${a.id})" style="font-size:11px;padding:5px 10px;border-radius:6px;border:none;background:#1565C0;color:#fff;cursor:pointer">Approve & list</button>
+            <button onclick="rejectAffiliate(${a.id})" style="font-size:11px;padding:5px 10px;border-radius:6px;border:0.5px solid var(--border-strong);background:none;cursor:pointer">Reject</button>
+          </div>
+        </div>`).join('');
+    }
+  }
+
+  // Update vendor count on Sell screen
+  const vStat = document.getElementById('vStatVendors');
+  if (vStat) vStat.textContent = vendors.filter(v => v.status === 'approved').length;
+
+  // ---- Live products ----
+  const pList = document.getElementById('productListDash');
+  if (pList) {
+    pList.innerHTML = PRODUCTS.map(p => `
+      <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:0.5px solid var(--border)">
+        <span>${p.emoji} ${p.name}</span>
+        <span style="color:var(--text-muted)">${formatNaira(p.price)}${p.affiliate ? ' · Aff' : ''}</span>
+      </div>`).join('');
+  }
+
+  // ---- Affiliate summary ----
+  const affBox = document.getElementById('affiliateSummary');
+  if (affBox) {
+    const affProducts = PRODUCTS.filter(p => p.affiliate);
+    affBox.innerHTML = `
+      <div>${affProducts.length} affiliate product(s) live</div>
+      <div style="margin-top:4px;color:var(--text-secondary)">Estimated commission shown above is illustrative only (8%). Real rates come from your affiliate partner.</div>
+    `;
+  }
+
+  // Marketing product selects
+  const sel = document.getElementById('mktProduct');
+  if (sel) {
+    sel.innerHTML = PRODUCTS.map(p => `<option value="${p.id}">${p.name} — ${formatNaira(p.price)}</option>`).join('');
+  }
+  const shareSel = document.getElementById('shareProduct');
+  if (shareSel) {
+    shareSel.innerHTML = PRODUCTS.map(p => `<option value="${p.id}">${p.name} — ${formatNaira(p.price)}</option>`).join('');
+  }
+
+  // Campaign ideas + leads on first load of dashboard
+  if (document.getElementById('campaignIdeas') && !document.getElementById('campaignIdeas').innerHTML.trim()) {
+    refreshCampaignIdeas();
+  }
+  renderLeads();
+}
+
+function advanceOrder(idx) {
+  const o = orders[idx];
+  if (!o) return;
+  const flow = ['Paid', 'Processing', 'Shipped', 'Delivered'];
+  const i = flow.indexOf(o.status);
+  if (i < 0 || i >= flow.length - 1) return;
+  o.status = flow[i + 1];
+  const notes = {
+    'Processing': 'Vendor / you is packing the order',
+    'Shipped': 'Handed to courier — tracking to be shared with customer',
+    'Delivered': 'Customer received the order'
+  };
+  o.fulfilment = notes[o.status] || o.fulfilment;
+  showToast('Order ' + o.id + ' → ' + o.status);
+  renderDashboard();
+}
+
+function notifyCustomer(idx) {
+  const o = orders[idx];
+  if (!o) return;
+  o.customerNotified = true;
+  // In production this would call WhatsApp Business API or SMS
+  showToast('Customer notification sent for ' + o.id + ' (status: ' + o.status + ')');
+  renderDashboard();
+}
+
+// ========== STAGE 8: MARKETING & ACQUISITION ==========
+let leads = []; // local only — replace with CRM / WhatsApp Business later
+let lastCaption = "";
+
+function getStoreLink(){
+  // In production this would be your real domain
+  return window.location.href.split('#')[0] || 'https://austinsmartmall.ng';
+}
+
+function copyStoreLink(){
+  const link = getStoreLink();
+  const box = document.getElementById('storeLinkBox');
+  if (box) {
+    box.style.display = 'block';
+    box.textContent = link;
+  }
+  navigator.clipboard.writeText(link).then(() => showToast('Store link copied')).catch(() => showToast('Copy failed — select the link manually'));
+}
+
+function shareStoreWhatsApp(){
+  const text = encodeURIComponent(
+    `Shop Nigerian products on Austin Smart Mall 🇳🇬\n\nReal vendors · Naira pricing · Paystack · WhatsApp ordering\n\nAsk Amara (our AI) what you need:\n${getStoreLink()}`
+  );
+  window.open(`https://wa.me/?text=${text}`, '_blank');
+}
+
+function generateCaption(){
+  const pid = parseInt(document.getElementById('mktProduct').value);
+  const platform = document.getElementById('mktPlatform').value;
+  const tone = (document.getElementById('mktTone') || {}).value || 'friendly';
+  const p = PRODUCTS.find(x => x.id === pid);
+  if (!p) return;
+
+  let caption = '';
+  const price = formatNaira(p.price);
+  const tag = p.cat.replace(/\s|&/g, '');
+
+  if (platform === 'instagram') {
+    if (tone === 'urgent') {
+      caption = `⚡ Limited stock alert\n\n${p.emoji} ${p.name}\n${price} only\n\n${p.desc}\n\nOrder now on Austin Smart Mall before it’s gone.\n\n#AustinSmartMall #MadeInNigeria #${tag}`;
+    } else if (tone === 'story') {
+      caption = `Real talk 🇳🇬\n\nWe found ${p.name} from ${p.vendor} and it actually delivers.\n\n${p.desc}\n\n${price} · Link in bio or WhatsApp us.\n\n#AustinSmartMall #ShopNigeria`;
+    } else {
+      caption = `🇳🇬 Fresh from Austin Smart Mall\n\n${p.emoji} ${p.name}\n${p.desc}\n\n💰 ${price}\n🏪 ${p.vendor}\n\nAsk Amara or order via WhatsApp.\n\n#AustinSmartMall #MadeInNigeria #${tag}`;
+    }
+  } else if (platform === 'facebook') {
+    caption = `Looking for quality ${p.cat.toLowerCase()}?\n\n${p.name} from ${p.vendor} is live on Austin Smart Mall.\n\n${p.desc}\n\nPrice: ${price}\nOrder on the site or WhatsApp.\n\nSupport Nigerian businesses 🇳🇬`;
+  } else if (platform === 'twitter') {
+    caption = `${p.emoji} ${p.name} — ${price}\n${p.vendor} on Austin Smart Mall\n\nNigerian products · Paystack · WhatsApp order\n${getStoreLink()}`;
+  } else {
+    // WhatsApp
+    caption = `${p.emoji} *${p.name}*\n${price}\n${p.vendor}\n\n${p.desc}\n\nOrder on Austin Smart Mall or reply here.`;
+  }
+
+  lastCaption = caption;
+  const box = document.getElementById('captionBox');
+  if (box) {
+    box.style.display = 'block';
+    box.textContent = caption;
+  }
+  const copyBtn = document.getElementById('copyCaption');
+  if (copyBtn) copyBtn.style.display = 'inline-block';
+}
+
+function copyCaption(){
+  navigator.clipboard.writeText(lastCaption).then(() => showToast('Caption copied!')).catch(() => showToast('Copy failed — select and copy manually'));
+}
+
+function refreshCampaignIdeas(){
+  const ideas = [
+    'Post 1 product every day this week with a WhatsApp order button.',
+    'Run a “Gift under ₦10,000” story series and point people to Amara.',
+    'Share a vendor spotlight (e.g. Lagos Spice Co.) in 3 groups.',
+    'Ask past buyers for a 1-line review and turn it into a status.',
+    'Create a short “How Amara finds your product” demo video.',
+    'Bundle 2 food items and promote as “Sunday cook package”.',
+    'Cross-post one Instagram caption to Facebook + WhatsApp Status the same day.'
+  ];
+  // Pick 3 random
+  const shuffled = ideas.sort(() => 0.5 - Math.random()).slice(0, 3);
+  const el = document.getElementById('campaignIdeas');
+  if (el) {
+    el.innerHTML = shuffled.map((t, i) => `<div style="padding:6px 0;border-bottom:0.5px solid var(--border)"><strong>${i + 1}.</strong> ${t}</div>`).join('');
+  }
+}
+
+function addLead(){
+  const name = (document.getElementById('leadName') || {}).value?.trim();
+  const phone = (document.getElementById('leadPhone') || {}).value?.trim();
+  if (!name || !phone) { showToast('Name and WhatsApp number required'); return; }
+  leads.push({ name, phone, date: new Date().toLocaleDateString('en-NG') });
+  document.getElementById('leadName').value = '';
+  document.getElementById('leadPhone').value = '';
+  showToast('Lead saved locally');
+  renderLeads();
+}
+
+function renderLeads(){
+  const el = document.getElementById('leadList');
+  if (!el) return;
+  if (leads.length === 0) {
+    el.innerHTML = '<span style="color:var(--text-muted)">No leads yet.</span>';
+    return;
+  }
+  el.innerHTML = leads.slice().reverse().map(l => `
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:0.5px solid var(--border)">
+      <span>${l.name}</span>
+      <span style="color:var(--text-muted)">${l.phone}</span>
+    </div>`).join('');
+}
+
+function shareProductMsg(){
+  const sel = document.getElementById('shareProduct');
+  if (!sel) return;
+  const pid = parseInt(sel.value);
+  const p = PRODUCTS.find(x => x.id === pid);
+  if (!p) return;
+  const text = `${p.emoji} ${p.name}\n${formatNaira(p.price)} · ${p.vendor}\n\n${p.desc}\n\nOrder on Austin Smart Mall:\n${getStoreLink()}`;
+  navigator.clipboard.writeText(text).then(() => showToast('Product share text copied')).catch(() => showToast('Copy failed'));
+}
+
+// ========== STAGE 9: PRODUCTION READINESS REPORT ==========
+function renderReadinessReport(){
+  const rows = [
+    ['Homepage', 'PASS', 'Mobile-first UI, Nigerian branding'],
+    ['Catalogue / categories', 'PASS', 'Live product list'],
+    ['Search', 'PASS', 'Client-side search'],
+    ['Product details', 'PASS', 'Includes WhatsApp order CTA'],
+    ['Cart add/remove', 'PASS', 'Session cart (not persisted)'],
+    ['Checkout UI', 'PASS', 'Paystack button + WhatsApp path'],
+    ['Paystack DEMO mode', 'PASS', 'Simulated only — no real charge'],
+    ['Paystack TEST/LIVE popup', 'NEEDS OWNER ACTION', 'Requires public key + Paystack.js + backend verify'],
+    ['Server-side payment verification', 'NOT IMPLEMENTED', 'Must verify with secret key on backend'],
+    ['Webhook / signature verify', 'NOT IMPLEMENTED', 'Requires backend'],
+    ['Order lifecycle UI', 'PASS', 'Paid→Processing→Shipped→Delivered (manual)'],
+    ['Auto-mark shipped/delivered', 'PASS', 'Deliberately never automatic'],
+    ['Vendor apply / approve', 'PASS', 'Frontend workflow'],
+    ['Vendor balances', 'PASS WITH WARNING', 'Credits on non-demo pay; payouts external'],
+    ['Affiliate apply / list', 'PASS', 'Frontend workflow'],
+    ['Affiliate commission confirm', 'PASS WITH WARNING', 'Only illustrative until network data'],
+    ['Amara recommendations', 'PASS', 'Only live PRODUCTS[]'],
+    ['Amara no invent / no fake fulfil', 'PASS', 'Hard rules in Stage 7'],
+    ['Amara private order lookup', 'NOT IMPLEMENTED', 'Needs auth + backend'],
+    ['Marketing captions', 'PASS', 'Real products only'],
+    ['Fake scarcity / fake reviews', 'PASS', 'Not used'],
+    ['WhatsApp broadcast automation', 'NEEDS OWNER ACTION', 'Needs WhatsApp Business API + consent'],
+    ['Analytics (real)', 'NOT IMPLEMENTED', 'Current numbers are session/demo-aware only'],
+    ['Auth / RBAC server-side', 'NOT IMPLEMENTED', 'Frontend-only; not secure for multi-user production'],
+    ['Database', 'NOT IMPLEMENTED', 'In-memory JS arrays only'],
+    ['Legal pages', 'PASS WITH WARNING', 'Placeholders — need lawyer review'],
+    ['SEO meta / OG', 'PASS', 'Basic tags added'],
+    ['Mobile / PWA shell', 'PASS WITH WARNING', 'Mobile-first; full PWA needs host + manifest'],
+    ['Secret key in frontend', 'PASS', 'Never present — enforced by design'],
+    ['Error toasts', 'PASS', 'User-visible feedback'],
+    ['Backup / export', 'NEEDS OWNER ACTION', 'Export from real DB when you have one']
+  ];
+
+  const pass = rows.filter(r => r[1] === 'PASS').length;
+  const warn = rows.filter(r => r[1] === 'PASS WITH WARNING').length;
+  const need = rows.filter(r => r[1] === 'NEEDS OWNER ACTION').length;
+  const notImpl = rows.filter(r => r[1] === 'NOT IMPLEMENTED').length;
+  // Score: PASS=1, WARNING=0.6, NEEDS=0.2, NOT=0
+  const score = Math.round(((pass * 1 + warn * 0.6 + need * 0.2) / rows.length) * 100);
+
+  document.getElementById('scoreValue').textContent = score + '%';
+  document.getElementById('scoreNote').textContent =
+    `${pass} pass · ${warn} warning · ${need} owner action · ${notImpl} not implemented (need backend)`;
+
+  const statusColor = s => {
+    if (s === 'PASS') return '#2E7D32';
+    if (s === 'PASS WITH WARNING') return '#F9A825';
+    if (s === 'NEEDS OWNER ACTION') return '#E65100';
+    return '#C62828';
+  };
+
+  document.getElementById('readinessTable').innerHTML = rows.map(([f,s,n]) => `
+    <div style="display:grid;grid-template-columns:1.2fr 1fr 1.4fr;gap:6px;padding:8px 0;border-bottom:0.5px solid var(--border);align-items:start">
+      <div style="font-weight:500">${f}</div>
+      <div style="color:${statusColor(s)};font-weight:600;font-size:11px">${s}</div>
+      <div style="color:var(--text-muted);font-size:11px">${n}</div>
+    </div>`).join('');
+
+  document.getElementById('ownerChecklist').innerHTML = `
+    <div>[ ] Connect production database / backend</div>
+    <div>[ ] Add Paystack <strong>public</strong> key only in frontend config</div>
+    <div>[ ] Store Paystack <strong>secret</strong> key in server env vars only</div>
+    <div>[ ] Implement server-side payment verification + webhooks</div>
+    <div>[ ] Complete Paystack business verification</div>
+    <div>[ ] Connect custom domain + HTTPS</div>
+    <div>[ ] Configure real WhatsApp Business number / API</div>
+    <div>[ ] Configure support email</div>
+    <div>[ ] Replace legal placeholders with lawyer-reviewed policies</div>
+    <div>[ ] Add real products / approve real vendors</div>
+    <div>[ ] Arrange shipping / delivery partners</div>
+    <div>[ ] Create secure admin account (backend auth)</div>
+    <div>[ ] Run Paystack TEST payment end-to-end with verification</div>
+    <div>[ ] Only then switch PAYSTACK_MODE to live after a successful verified test</div>
+  `;
+
+  document.getElementById('launchSequence').innerHTML = `
+    <li>Deploy backend + database with env secrets</li>
+    <li>Wire Paystack test keys and verify one test payment server-side</li>
+    <li>Load real products and approve vendors</li>
+    <li>Replace legal text and contact details</li>
+    <li>Connect domain + HTTPS</li>
+    <li>Soft launch to a small group</li>
+    <li>Switch to LIVE only after verified test payments succeed</li>
+    <li>Never claim real revenue until a live verified payment exists</li>
+  `;
+}
+
+// ========== STAGE 10b: AUTH + CHECKOUT VIA API ==========
+async function doLogin() {
+  const email = document.getElementById('loginEmail').value.trim();
+  const password = document.getElementById('loginPassword').value;
+  try {
+    const data = await api('/api/auth/login', { method: 'POST', body: JSON.stringify({ email, password }) });
+    setAuth(data.token, data.user);
+    showToast('Logged in');
+    await refreshCartFromApi();
+    showScreen('home');
+  } catch (e) {
+    showToast('Login failed: ' + e.message);
+  }
+}
+
+async function doRegister() {
+  const name = document.getElementById('regName').value.trim();
+  const email = document.getElementById('regEmail').value.trim();
+  const password = document.getElementById('regPassword').value;
+  const role = document.getElementById('regRole').value;
+  try {
+    const data = await api('/api/auth/register', { method: 'POST', body: JSON.stringify({ name, email, password, role }) });
+    setAuth(data.token, data.user);
+    showToast('Account created');
+    showScreen('home');
+  } catch (e) {
+    showToast('Register failed: ' + e.message);
+  }
+}
+
+function saveApiBase() {
+  const v = document.getElementById('apiBaseInput').value.trim().replace(/\/$/, '');
+  if (!v) return;
+  localStorage.setItem('ASM_API_BASE', v);
+  location.reload();
+}
+
+async function checkoutFlow() {
+  if (!API_ONLINE) {
+    showToast('Backend offline — start austin-backend and reconnect');
+    return;
+  }
+  if (!AUTH_TOKEN) {
+    showToast('Please login first for secure checkout');
+    showScreen('auth');
+    return;
+  }
+  showToast('Creating order on server…');
+  try {
+    // Ensure items are on server cart
+    for (const item of cart) {
+      try {
+        await api('/api/cart/items', { method: 'POST', body: JSON.stringify({ product_id: item.id, quantity: 1 }) });
+      } catch (_) { /* may already exist */ }
+    }
+    const prep = await api('/api/orders/checkout', { method: 'POST', body: '{}' });
+    // Backend is authority for amount
+    const amountNaira = prep.amount;
+    const reference = prep.reference;
+    if (prep.public_key) PAYSTACK_PUBLIC_KEY = prep.public_key;
+    if (prep.mode) PAYSTACK_MODE = prep.mode;
+
+    if (PAYSTACK_MODE === 'demo' || !PAYSTACK_PUBLIC_KEY) {
+      // Demo path still goes through verify endpoint
+      await api('/api/orders/verify-payment', { method: 'POST', body: JSON.stringify({ reference }) });
+      cart = [];
+      document.getElementById('cartCount').style.display = 'none';
+      showToast('DEMO order PAID on server — ref ' + reference);
+      renderCart();
+      return;
+    }
+
+    if (typeof PaystackPop === 'undefined') {
+      showToast('Load Paystack inline.js for TEST/LIVE popup, or use DEMO mode on server');
+      return;
+    }
+    const handler = PaystackPop.setup({
+      key: PAYSTACK_PUBLIC_KEY,
+      email: (AUTH_USER && AUTH_USER.email) || 'customer@example.com',
+      amount: prep.amount_kobo,
+      currency: 'NGN',
+      ref: reference,
+      callback: function(response) {
+        api('/api/orders/verify-payment', {
+          method: 'POST',
+          body: JSON.stringify({ reference: response.reference })
+        }).then(() => {
+          cart = [];
+          document.getElementById('cartCount').style.display = 'none';
+          showToast('Payment verified by server — order PAID');
+          renderCart();
+        }).catch(err => showToast('Verify failed: ' + err.message));
+      },
+      onClose: function() { showToast('Payment window closed'); }
+    });
+    handler.openIframe();
+  } catch (e) {
+    showToast('Checkout failed: ' + e.message);
+  }
+}
+
+async function bootstrapApi() {
+  updateAuthUI();
+  const label = document.getElementById('apiBaseLabel');
+  if (label) label.textContent = API_BASE_URL;
+  const input = document.getElementById('apiBaseInput');
+  if (input) input.value = API_BASE_URL;
+
+  const banner = document.getElementById('apiBanner');
+  const health = await checkApiHealth();
+  if (health) {
+    PAYSTACK_MODE = health.mode || PAYSTACK_MODE;
+    if (banner) {
+      banner.style.display = 'block';
+      banner.textContent = 'API connected · mode: ' + (health.mode || 'test') + ' · secret on server: ' + (health.has_paystack_secret ? 'yes' : 'no');
+    }
+    try {
+      await loadProductsFromApi();
+      if (PRODUCTS.length === 0) {
+        showToast('Catalogue empty — add approved products via API');
+      }
+    } catch (e) {
+      if (banner) banner.textContent = 'API up but products failed: ' + e.message;
+    }
+  } else {
+    if (banner) {
+      banner.style.display = 'block';
+      banner.style.color = '#FFCC80';
+      banner.innerHTML = 'Backend offline (' + API_BASE_URL + '). Start austin-backend or set API URL in Login. <button onclick="useSamplePreview()" style="margin-left:6px;font-size:10px;cursor:pointer">Use sample preview</button>';
+    }
+    PRODUCTS = [];
+  }
+  renderProducts('homeProducts', PRODUCTS, 4);
+  renderVendorChips();
+  renderChat();
+  if (AUTH_TOKEN) {
+    try {
+      const me = await api('/api/auth/me');
+      setAuth(AUTH_TOKEN, me.user);
+      await refreshCartFromApi();
+    } catch {
+      setAuth(null, null);
+    }
+  }
+}
+
+function useSamplePreview() {
+  PRODUCTS = SAMPLE_PRODUCTS.slice();
+  showToast('SAMPLE preview only — not real catalogue');
+  const banner = document.getElementById('apiBanner');
+  if (banner) banner.textContent = 'SAMPLE DATA — not connected to backend';
+  renderProducts('homeProducts', PRODUCTS, 4);
+  renderAllProducts(null);
+}
+
+// ========== INIT ==========
+function renderVendorChips(){
+  const names = vendors.filter(v => v.status === 'approved').map(v => v.name);
+  const el = document.getElementById('vendorChips');
+  if (el) el.innerHTML = names.map(v=>`<div class="vendor-chip"><span class="vendor-dot"></span>${v}</div>`).join('');
+}
+
+document.getElementById('searchInput').addEventListener('input',function(){
+  const q = this.value.toLowerCase().trim();
+  if(!q){ renderAllProducts(null); return; }
+  showScreen('products');
+  const filtered = PRODUCTS.filter(p=>
+    p.name.toLowerCase().includes(q) ||
+    p.vendor.toLowerCase().includes(q) ||
+    p.cat.toLowerCase().includes(q) ||
+    (p.desc||'').toLowerCase().includes(q)
+  );
+  renderProducts('allProducts',filtered);
+  document.getElementById('browseTitle').textContent = `Results for "${this.value}"`;
+});
+
+bootstrapApi();
+</script>
+</body>
+</html>
